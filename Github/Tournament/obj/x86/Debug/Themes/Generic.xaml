@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="using:Tournament.EnumerationSlider">
+
+    <local:AsWordsConverter x:Key="AsWordsConverter" />
+
+    <Style TargetType="local:EnumerationSlider">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:EnumerationSlider">
+                    <StackPanel>
+                        <TextBlock Name="PART_TextBlock"
+                                   Text="{Binding Value, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource AsWordsConverter}}"
+                                   Foreground="White" />
+                        <Slider Name="PART_Slider"
+                                SnapsTo="StepValues"
+                                StepFrequency="1"
+                                IsThumbToolTipEnabled="False"
+                                Margin="0 0 0 -12" />
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

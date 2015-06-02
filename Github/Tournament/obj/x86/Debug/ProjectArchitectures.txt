@@ -1,0 +1,1 @@
+C:\Users\NATHAN\WindowsApps\Tournament\Tournament\Tournament.csproj;x86

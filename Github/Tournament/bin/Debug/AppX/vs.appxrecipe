@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>NATHAN-PC</Machine>
+    <WindowsUser>NATHAN</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>97738aae-fd72-402f-8fc6-a76da7b7bc44</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\NATHAN\WindowsApps\Tournament\Tournament\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>A87D1F271ED0F8C16CCC04F780327639B8EF8D723671931E258E0133B9A06C64</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>97738aae-fd72-402f-8fc6-a76da7b7bc44_1.0.0.0_neutral__5a9pcwvvxtfc2</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>97738aae-fd72-402f-8fc6-a76da7b7bc44_5a9pcwvvxtfc2!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>97738aae-fd72-402f-8fc6-a76da7b7bc44</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=NATHAN</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-28T12:34:08.841</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\bin\Debug\Tournament.exe">
+      <PackagePath>Tournament.exe</PackagePath>
+      <Modified>2015-05-28T12:36:01.242</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-05-28T12:34:08.263</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2015-05-28T12:36:01.040</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\bin\Debug\Tournament.xr.xml">
+      <PackagePath>Tournament.xr.xml</PackagePath>
+      <Modified>2015-05-28T12:36:01.024</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-05-28T12:34:08.654</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
