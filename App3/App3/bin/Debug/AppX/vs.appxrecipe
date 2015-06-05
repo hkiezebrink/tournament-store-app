@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>RYAN</Machine>
+    <WindowsUser>RyaN</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>5f41facc-b7f8-4701-85e2-4a88efa26e09</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>A2CF6A42816883234F04757B643A3D0BBCF3AE618CBFF11CEABFF376197A719F</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>5f41facc-b7f8-4701-85e2-4a88efa26e09_1.0.0.0_neutral__kjgchbyw3mjwy</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>5f41facc-b7f8-4701-85e2-4a88efa26e09_kjgchbyw3mjwy!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>5f41facc-b7f8-4701-85e2-4a88efa26e09</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=RyaN</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-05T00:45:23.237</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\bin\Debug\App3.exe">
+      <PackagePath>App3.exe</PackagePath>
+      <Modified>2015-06-05T00:46:21.657</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-04T13:58:06.777</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\Assets\microsoft-sdk.png">
+      <PackagePath>Assets\microsoft-sdk.png</PackagePath>
+      <Modified>2015-06-04T13:54:52.378</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\Assets\placeholder-sdk.png">
+      <PackagePath>Assets\placeholder-sdk.png</PackagePath>
+      <Modified>2015-06-04T13:54:52.386</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-04T13:58:06.783</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\Assets\smallTile-sdk.png">
+      <PackagePath>Assets\smallTile-sdk.png</PackagePath>
+      <Modified>2015-06-04T13:54:52.396</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\Assets\splash-sdk.png">
+      <PackagePath>Assets\splash-sdk.png</PackagePath>
+      <Modified>2015-06-04T13:54:52.420</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-04T13:58:06.798</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\Assets\squareTile-sdk.png">
+      <PackagePath>Assets\squareTile-sdk.png</PackagePath>
+      <Modified>2015-06-04T13:54:52.428</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\Assets\storeLogo-sdk.png">
+      <PackagePath>Assets\storeLogo-sdk.png</PackagePath>
+      <Modified>2015-06-04T13:54:52.443</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-04T13:58:06.813</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\Assets\tile-sdk.png">
+      <PackagePath>Assets\tile-sdk.png</PackagePath>
+      <Modified>2015-06-04T13:54:52.454</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\Assets\windows-sdk.png">
+      <PackagePath>Assets\windows-sdk.png</PackagePath>
+      <Modified>2015-06-04T13:54:52.459</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-06-04T13:55:41.254</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\bin\Debug\Common\StandardStyles.xbf">
+      <PackagePath>Common\StandardStyles.xbf</PackagePath>
+      <Modified>2015-06-04T13:55:41.258</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2015-06-05T00:44:56.517</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\bin\Debug\Sample-Utils\SampleTemplateStyles.xbf">
+      <PackagePath>Sample-Utils\SampleTemplateStyles.xbf</PackagePath>
+      <Modified>2015-06-04T13:55:41.266</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\bin\Debug\App3.xr.xml">
+      <PackagePath>App3.xr.xml</PackagePath>
+      <Modified>2015-06-05T00:44:56.490</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-06-05T00:45:22.937</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
