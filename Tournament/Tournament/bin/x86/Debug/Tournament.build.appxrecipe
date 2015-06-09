@@ -32,6 +32,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>

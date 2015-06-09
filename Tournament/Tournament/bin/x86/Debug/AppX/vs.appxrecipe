@@ -8,7 +8,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>97738aae-fd72-402f-8fc6-a76da7b7bc44</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\NATHAN\WindowsApps\Tournament\Tournament\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>7E5A87090B5699FEB41AAD088006AE824A0063067C01693F1F1F1A97D553B2F0</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>8BF3FE61DEC8B0BA19F8B75CAEE63DDBD20BC8FCA0E9FEB1E801519AF7ABE3D0</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>97738aae-fd72-402f-8fc6-a76da7b7bc44_1.0.0.0_x86__5a9pcwvvxtfc2</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>97738aae-fd72-402f-8fc6-a76da7b7bc44_5a9pcwvvxtfc2!App</RegisteredUserModeAppID>
     <RegisteredPackageID>97738aae-fd72-402f-8fc6-a76da7b7bc44</RegisteredPackageID>
@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-06-08T13:27:48.732</Modified>
+      <Modified>2015-06-09T07:46:12.977</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\bin\x86\Debug\Tournament.exe">
       <PackagePath>Tournament.exe</PackagePath>
-      <Modified>2015-06-09T06:44:48.719</Modified>
+      <Modified>2015-06-09T07:25:22.618</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLite.WinRT81\3.8.10.2\Redist\Debug\x86\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
@@ -44,6 +44,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2013-07-23T13:01:02.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\Assets\StoreLogo.scale-100.png">
@@ -65,7 +66,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\bin\x86\Debug\Views\MainPage.xbf">
       <PackagePath>Views\MainPage.xbf</PackagePath>
-      <Modified>2015-06-09T06:44:48.415</Modified>
+      <Modified>2015-06-09T07:25:22.281</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\bin\x86\Debug\Tournament.xr.xml">
       <PackagePath>Tournament.xr.xml</PackagePath>
@@ -73,7 +74,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\NATHAN\WindowsApps\Tournament\Tournament\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-06-08T13:27:48.596</Modified>
+      <Modified>2015-06-09T07:46:12.744</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
