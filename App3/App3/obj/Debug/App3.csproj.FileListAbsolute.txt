@@ -40,3 +40,45 @@ c:\users\ryan\documents\visual studio 2013\Projects\App3\App3\obj\Debug\qualifie
 c:\users\ryan\documents\visual studio 2013\Projects\App3\App3\obj\Debug\qualifiers.txt.intermediate
 c:\users\ryan\documents\visual studio 2013\Projects\App3\App3\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 c:\users\ryan\documents\visual studio 2013\Projects\App3\App3\obj\Debug\ProjectArchitectures.txt
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\bin\Debug\App.xbf
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\bin\Debug\Common\StandardStyles.xbf
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\bin\Debug\MainPage.xbf
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\bin\Debug\Sample-Utils\SampleTemplateStyles.xbf
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\bin\Debug\App3.xr.xml
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\bin\Debug\App3.exe
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\bin\Debug\App3.pdb
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\bin\Debug\resources.pri
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\bin\Debug\AppxManifest.xml
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\bin\Debug\App3.build.appxrecipe
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\App.g.i.cs
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\App.g.cs
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\Common\StandardStyles.g.i.cs
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\Common\StandardStyles.g.cs
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\MainPage.g.i.cs
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\MainPage.g.cs
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\Sample-Utils\SampleTemplateStyles.g.i.cs
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\Sample-Utils\SampleTemplateStyles.g.cs
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\App.xaml
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\Common\StandardStyles.xaml
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\MainPage.xaml
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\Sample-Utils\SampleTemplateStyles.xaml
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\App.xbf
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\Common\StandardStyles.xbf
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\MainPage.xbf
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\Sample-Utils\SampleTemplateStyles.xbf
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\XamlSaveStateFile.xml
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\App3.exe
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\App3.pdb
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\priconfig.xml
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\priconfig.xml.intermediate
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\layout.resfiles
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\layout.resfiles.intermediate
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\resources.resfiles
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\resources.resfiles.intermediate
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\pri.resfiles
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\pri.resfiles.intermediate
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\qualifiers.txt
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\qualifiers.txt.intermediate
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\obj\Debug\ProjectArchitectures.txt

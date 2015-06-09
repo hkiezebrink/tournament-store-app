@@ -1,1 +1,1 @@
-C:\Users\RyaN\Documents\Visual Studio 2013\Projects\App3\App3\App3.csproj;neutral
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\App3\App3\App3.csproj;neutral
