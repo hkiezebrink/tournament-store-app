@@ -4,7 +4,13 @@ using Windows.UI.Xaml.Data;
 
 namespace Tournament.MVVM
 {
-    class BooleanToVisibilityConverter : IValueConverter
+    /// <summary>
+    /// This class is used to determine what is visible in mainpage.xaml:
+    /// in editmode ---> BooleanToVisibilityConverter
+    /// in designmode ---> ReverseBooleanToVisibilityConverter
+    /// </summary>
+    
+    public class BooleanToVisibilityConverter : IValueConverter
     {
         public bool IsReversed { get; set; }
 

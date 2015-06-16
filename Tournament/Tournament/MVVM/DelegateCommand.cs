@@ -5,6 +5,9 @@ using System.Windows.Input;
 
 namespace Tournament.MVVM
 {
+    /// <summary>
+    /// This class provides two methods to switch between command states. Execute and canExecute. 
+    /// </summary>
     class DelegateCommand : ICommand
     {
         private readonly Action _execute;

@@ -20,13 +20,15 @@ using SQLite;
 
 namespace Tournament.Views
 {
+    using DataAccessLayer;
+    using Models;
+
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
     public sealed partial class Fixtures : Page
     {
 
-        private static string dbPath = string.Empty;
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
@@ -83,20 +85,68 @@ namespace Tournament.Views
         {
         }
 
+        /// <summary>
+        /// Get all tournaments from the database. And display the number of players of the entered
+        /// tournament. Or display an exception if the tournament does not exsist.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Get_Fixtures(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(dbPath))
+            List<Tournament> models = Dal.GetAllTournaments();
+
+            int i = -1;
+            string name = TournamentName.Text.ToString();
+
+            foreach(var j in models)
             {
-                dbPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "Storage.sqlite");
+                if (j.Name == name)
+                {
+                    i = models.IndexOf(j);
+                }
             }
 
-            using (var db = new SQLiteConnection(dbPath))
+            try
             {
-                // Activate Tracing
-                db.Trace = true;
+                if (i != -1)
+                {
+                    Players.Text = models[i].Players.ToString();
+                }
+                else
+                {
+                    Players.Text = "No tournament was found.";
+                }
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                Players.Text = "No tournament was found.";
+            }
+        }
 
-                // SQL Syntax:
-                db.Execute("SELECT FROM Tournament WHERE Id = ?", TournamentName);
+        // When focused, set the text to null if it is default.
+        private void TournamentName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if(TournamentName.Text == "Tournament name")
+            {
+                TournamentName.Text = "";
+            }
+        }
+
+        // When focused, set the text to null if it is default.
+        private void Players_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if((Players.Text == "Number of players") || Players.Text == "No tournament was found.")
+            {
+                Players.Text = "";
+            }
+        }
+
+        // When unfocused, set default text.
+        private void TournamentName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if(TournamentName.Text == "")
+            {
+                TournamentName.Text = "Tournament name";
             }
         }
     }

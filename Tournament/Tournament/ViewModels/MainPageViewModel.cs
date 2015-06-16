@@ -8,6 +8,9 @@
     using System.Linq;
     using System.Windows.Input;
 
+    /// <summary>
+    /// This class is connected to the mainpage.xaml. And defines the different commands within mainpage.xaml.
+    /// </summary>
     class MainPageViewModel : ViewModelBase
     {
         private DelegateCommand cancelCommand;

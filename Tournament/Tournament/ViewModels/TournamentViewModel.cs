@@ -9,6 +9,9 @@
     using Windows.Storage.Pickers;
     using Windows.UI.Xaml.Media;
 
+    /// <summary>
+    /// This class is used for binding the user input in the mainpage.xaml. 
+    /// </summary>
     class TournamentViewModel : ViewModelBase
     {
         private Tournament model;
@@ -52,6 +55,11 @@
                     return string.Empty;
                 }
 
+                if(this.model.Players > 1)
+                {
+                    return this.model.Type = "Leaque";
+                }
+
                 return this.model.Type;
             }
 
@@ -82,6 +90,28 @@
                 if (this.model != null)
                 {
                     this.model.Id = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public int Players
+        {
+            get
+            {
+                if (this.model == null)
+                {
+                    return 2;
+                }
+
+                return this.model.Players = 2;
+            }
+
+            set
+            {
+                if (this.model != null)
+                {
+                    this.model.Players = value;
                     this.OnPropertyChanged();
                 }
             }

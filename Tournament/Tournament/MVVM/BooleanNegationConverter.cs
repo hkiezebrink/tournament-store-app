@@ -3,7 +3,10 @@ using Windows.UI.Xaml.Data;
 
 namespace Tournament.MVVM
 {
-    class BooleanNegationConverter : IValueConverter
+
+    // This class is used when a tournament object is selected in the gridview. 
+    // To determine which tournament object is currently selected.
+    public class BooleanNegationConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {

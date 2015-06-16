@@ -405,6 +405,7 @@ namespace Tournament.Tournament_XamlTypeInfo
                 userType.AddMemberName("Description");
                 userType.AddMemberName("Type");
                 userType.AddMemberName("Id");
+                userType.AddMemberName("Players");
                 userType.AddMemberName("Model");
                 userType.AddMemberName("Name");
                 userType.AddMemberName("ImageSource");
@@ -582,97 +583,107 @@ namespace Tournament.Tournament_XamlTypeInfo
             var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
             that.Id = (global::System.Int32)Value;
         }
-        private object get_14_TournamentViewModel_Model(object instance)
+        private object get_14_TournamentViewModel_Players(object instance)
+        {
+            var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
+            return that.Players;
+        }
+        private void set_14_TournamentViewModel_Players(object instance, object Value)
+        {
+            var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
+            that.Players = (global::System.Int32)Value;
+        }
+        private object get_15_TournamentViewModel_Model(object instance)
         {
             var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
             return that.Model;
         }
-        private void set_14_TournamentViewModel_Model(object instance, object Value)
+        private void set_15_TournamentViewModel_Model(object instance, object Value)
         {
             var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
             that.Model = (global::Tournament.Models.Tournament)Value;
         }
-        private object get_15_TournamentViewModel_Name(object instance)
+        private object get_16_TournamentViewModel_Name(object instance)
         {
             var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
             return that.Name;
         }
-        private void set_15_TournamentViewModel_Name(object instance, object Value)
+        private void set_16_TournamentViewModel_Name(object instance, object Value)
         {
             var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
             that.Name = (global::System.String)Value;
         }
-        private object get_16_TournamentViewModel_ImageSource(object instance)
+        private object get_17_TournamentViewModel_ImageSource(object instance)
         {
             var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
             return that.ImageSource;
         }
-        private void set_17_TournamentViewModel_Picture(object instance, object Value)
+        private void set_18_TournamentViewModel_Picture(object instance, object Value)
         {
             var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
             that.Picture = (global::System.Byte[])Value;
         }
-        private object get_18_TournamentViewModel_Status(object instance)
+        private object get_19_TournamentViewModel_Status(object instance)
         {
             var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
             return that.Status;
         }
-        private void set_18_TournamentViewModel_Status(object instance, object Value)
+        private void set_19_TournamentViewModel_Status(object instance, object Value)
         {
             var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
             that.Status = (global::Tournament.ViewModels.Status)Value;
         }
-        private object get_19_TournamentViewModel_StatusString(object instance)
+        private object get_20_TournamentViewModel_StatusString(object instance)
         {
             var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
             return that.StatusString;
         }
-        private void set_19_TournamentViewModel_StatusString(object instance, object Value)
+        private void set_20_TournamentViewModel_StatusString(object instance, object Value)
         {
             var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
             that.StatusString = (global::System.String)Value;
         }
-        private object get_20_TournamentViewModel_UploadImageCommand(object instance)
+        private object get_21_TournamentViewModel_UploadImageCommand(object instance)
         {
             var that = (global::Tournament.ViewModels.TournamentViewModel)instance;
             return that.UploadImageCommand;
         }
-        private object get_21_ViewModelBase_EditCommand(object instance)
+        private object get_22_ViewModelBase_EditCommand(object instance)
         {
             var that = (global::Tournament.ViewModels.ViewModelBase)instance;
             return that.EditCommand;
         }
-        private object get_22_ViewModelBase_IsInDesignMode(object instance)
+        private object get_23_ViewModelBase_IsInDesignMode(object instance)
         {
             var that = (global::Tournament.ViewModels.ViewModelBase)instance;
             return that.IsInDesignMode;
         }
-        private object get_23_ViewModelBase_IsInEditMode(object instance)
+        private object get_24_ViewModelBase_IsInEditMode(object instance)
         {
             var that = (global::Tournament.ViewModels.ViewModelBase)instance;
             return that.IsInEditMode;
         }
-        private void set_23_ViewModelBase_IsInEditMode(object instance, object Value)
+        private void set_24_ViewModelBase_IsInEditMode(object instance, object Value)
         {
             var that = (global::Tournament.ViewModels.ViewModelBase)instance;
             that.IsInEditMode = (global::System.Boolean)Value;
         }
-        private object get_24_MainPageViewModel_SaveCommand(object instance)
+        private object get_25_MainPageViewModel_SaveCommand(object instance)
         {
             var that = (global::Tournament.ViewModels.MainPageViewModel)instance;
             return that.SaveCommand;
         }
-        private object get_25_MainPageViewModel_SelectCommand(object instance)
+        private object get_26_MainPageViewModel_SelectCommand(object instance)
         {
             var that = (global::Tournament.ViewModels.MainPageViewModel)instance;
             return that.SelectCommand;
         }
-        private object get_26_MainPageViewModel_SelectedTournament(object instance)
+        private object get_27_MainPageViewModel_SelectedTournament(object instance)
         {
             var that = (global::Tournament.ViewModels.MainPageViewModel)instance;
             return that.SelectedTournament;
         }
-        private void set_26_MainPageViewModel_SelectedTournament(object instance, object Value)
+        private void set_27_MainPageViewModel_SelectedTournament(object instance, object Value)
         {
             var that = (global::Tournament.ViewModels.MainPageViewModel)instance;
             that.SelectedTournament = (global::Tournament.ViewModels.TournamentViewModel)Value;
@@ -771,82 +782,88 @@ namespace Tournament.Tournament_XamlTypeInfo
                 xamlMember.Getter = get_13_TournamentViewModel_Id;
                 xamlMember.Setter = set_13_TournamentViewModel_Id;
                 break;
+            case "Tournament.ViewModels.TournamentViewModel.Players":
+                userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.TournamentViewModel");
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "Players", "Int32");
+                xamlMember.Getter = get_14_TournamentViewModel_Players;
+                xamlMember.Setter = set_14_TournamentViewModel_Players;
+                break;
             case "Tournament.ViewModels.TournamentViewModel.Model":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "Model", "Tournament.Models.Tournament");
-                xamlMember.Getter = get_14_TournamentViewModel_Model;
-                xamlMember.Setter = set_14_TournamentViewModel_Model;
+                xamlMember.Getter = get_15_TournamentViewModel_Model;
+                xamlMember.Setter = set_15_TournamentViewModel_Model;
                 break;
             case "Tournament.ViewModels.TournamentViewModel.Name":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_15_TournamentViewModel_Name;
-                xamlMember.Setter = set_15_TournamentViewModel_Name;
+                xamlMember.Getter = get_16_TournamentViewModel_Name;
+                xamlMember.Setter = set_16_TournamentViewModel_Name;
                 break;
             case "Tournament.ViewModels.TournamentViewModel.ImageSource":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "ImageSource", "Windows.UI.Xaml.Media.ImageSource");
-                xamlMember.Getter = get_16_TournamentViewModel_ImageSource;
+                xamlMember.Getter = get_17_TournamentViewModel_ImageSource;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Tournament.ViewModels.TournamentViewModel.Picture":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "Picture", "Byte[]");
-                xamlMember.Setter = set_17_TournamentViewModel_Picture;
+                xamlMember.Setter = set_18_TournamentViewModel_Picture;
                 break;
             case "Tournament.ViewModels.TournamentViewModel.Status":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "Status", "Tournament.ViewModels.Status");
-                xamlMember.Getter = get_18_TournamentViewModel_Status;
-                xamlMember.Setter = set_18_TournamentViewModel_Status;
+                xamlMember.Getter = get_19_TournamentViewModel_Status;
+                xamlMember.Setter = set_19_TournamentViewModel_Status;
                 break;
             case "Tournament.ViewModels.TournamentViewModel.StatusString":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "StatusString", "String");
-                xamlMember.Getter = get_19_TournamentViewModel_StatusString;
-                xamlMember.Setter = set_19_TournamentViewModel_StatusString;
+                xamlMember.Getter = get_20_TournamentViewModel_StatusString;
+                xamlMember.Setter = set_20_TournamentViewModel_StatusString;
                 break;
             case "Tournament.ViewModels.TournamentViewModel.UploadImageCommand":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "UploadImageCommand", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_20_TournamentViewModel_UploadImageCommand;
+                xamlMember.Getter = get_21_TournamentViewModel_UploadImageCommand;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Tournament.ViewModels.ViewModelBase.EditCommand":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.ViewModelBase");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "EditCommand", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_21_ViewModelBase_EditCommand;
+                xamlMember.Getter = get_22_ViewModelBase_EditCommand;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Tournament.ViewModels.ViewModelBase.IsInDesignMode":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.ViewModelBase");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "IsInDesignMode", "Boolean");
-                xamlMember.Getter = get_22_ViewModelBase_IsInDesignMode;
+                xamlMember.Getter = get_23_ViewModelBase_IsInDesignMode;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Tournament.ViewModels.ViewModelBase.IsInEditMode":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.ViewModelBase");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "IsInEditMode", "Boolean");
-                xamlMember.Getter = get_23_ViewModelBase_IsInEditMode;
-                xamlMember.Setter = set_23_ViewModelBase_IsInEditMode;
+                xamlMember.Getter = get_24_ViewModelBase_IsInEditMode;
+                xamlMember.Setter = set_24_ViewModelBase_IsInEditMode;
                 break;
             case "Tournament.ViewModels.MainPageViewModel.SaveCommand":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.MainPageViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "SaveCommand", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_24_MainPageViewModel_SaveCommand;
+                xamlMember.Getter = get_25_MainPageViewModel_SaveCommand;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Tournament.ViewModels.MainPageViewModel.SelectCommand":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.MainPageViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "SelectCommand", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_25_MainPageViewModel_SelectCommand;
+                xamlMember.Getter = get_26_MainPageViewModel_SelectCommand;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Tournament.ViewModels.MainPageViewModel.SelectedTournament":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.ViewModels.MainPageViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "SelectedTournament", "Tournament.ViewModels.TournamentViewModel");
-                xamlMember.Getter = get_26_MainPageViewModel_SelectedTournament;
-                xamlMember.Setter = set_26_MainPageViewModel_SelectedTournament;
+                xamlMember.Getter = get_27_MainPageViewModel_SelectedTournament;
+                xamlMember.Setter = set_27_MainPageViewModel_SelectedTournament;
                 break;
             }
             return xamlMember;

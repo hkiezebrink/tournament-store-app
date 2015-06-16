@@ -27,8 +27,8 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Tournament Planner"
-                   FontSize="32"
+        <TextBlock Text="Tournament Planner" FontFamily="Comic Sans MS"
+                   FontSize="42"
                    Margin="20"
                    TextAlignment="Left"/>
 
@@ -39,15 +39,15 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <StackPanel>
-                <!--<AppBarButton Icon="OpenFile"
+                <!-- Not in use.
+                <AppBarButton Icon="OpenFile"
                               Label="Create"
                               Command="{Binding CreateCommand}" />-->
                 <AppBarButton Icon="SelectAll"
                               Label="Select"
-                              Command="{Binding SelectCommand}" Click="AppBarButton_Click_2" />
+                              Command="{Binding SelectCommand}"/>
                 <AppBarButton Icon="Preview"
                               Label="Fixtures"
-                              IsEnabled="False"
                               x:Name="Fixtures"
                               Click="Fixtures_Page"/>
                               
@@ -102,6 +102,8 @@
                                   Label="Save" Click="AppBarButton_Click" />
                 </StackPanel>
             </Grid>
+            
+            <!-- Only visible when a tournament is selected. -->
             <Border Visibility="{Binding HasSelection, Converter={StaticResource BooleanToVisibilityConverter}}"
                     Grid.Column="2"
                     Margin="20 0">
@@ -122,7 +124,8 @@
                         <RowDefinition Height="10" />
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
-                    <!--<TextBlock Text="Id"
+                    <!-- Not in use.
+                    <TextBlock Text="Id"
                                FontSize="20"
                                HorizontalAlignment="Right"
                                FontWeight="Light" />
@@ -165,7 +168,8 @@
                     </ComboBox>
 
                     <TextBox x:Name="Numbers" Visibility="Collapsed" Grid.Column="2" HorizontalAlignment="Right"
-                             MaxWidth="100" TextChanged="Numbers_Changed"/>
+                             TextChanged="Numbers_Changed" MaxLength="2"
+                             Text="{Binding Players, Mode=TwoWay}"/>
 
                     <TextBlock Grid.Row="2"
                                Text="Name"
@@ -192,6 +196,8 @@
                                Grid.Column="2"
                                Text="{Binding Status}"
                                FontSize="20" />
+                    
+                    <!-- Uses the enum in the status class in ViewModels -->
                     <e:EnumerationSlider Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
                                                 Enumeration="Tournament.ViewModels.Status"
                                                 Grid.Row="4"

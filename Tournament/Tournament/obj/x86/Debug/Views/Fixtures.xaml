@@ -12,7 +12,7 @@
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String  x:Key="AppName">Fixtures</x:String>
+        <x:String  x:Key="AppName"></x:String>
     </Page.Resources>
 
     <!--
@@ -43,11 +43,15 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+
+            <TextBlock x:Name="pageTitle" Text="Fixtures" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="5,45" FontSize="42" FontFamily="Comic Sans MS"/>
         </Grid>
-        <TextBox x:Name="TournamentName" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Margin="42,5,0,0"/>
-        <Button x:ConnectionId='1' Content="Button" HorizontalAlignment="Left" Margin="144,2,0,0" Grid.Row="1" VerticalAlignment="Top"                     />
+        <TextBox x:ConnectionId='1' x:Name="TournamentName" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="Tournament name" VerticalAlignment="Top" Margin="42,5,0,0"
+                 MaxWidth="200" MinWidth="200"                                                                        />
+        <Button x:ConnectionId='2' Content="Match" HorizontalAlignment="Left" Margin="39,97,0,0" Grid.Row="1" VerticalAlignment="Top"                      Width="88"/>
+        <TextBox x:ConnectionId='3' x:Name="Players" HorizontalAlignment="Left" Margin="42,51,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Number of players" VerticalAlignment="Top"
+                 MaxWidth="200" MinWidth="200"                            />
     </Grid>
 </Page>
 

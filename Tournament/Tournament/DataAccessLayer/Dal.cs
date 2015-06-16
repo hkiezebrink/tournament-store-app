@@ -10,9 +10,11 @@
     using Windows.ApplicationModel;
     using Windows.Storage;
 
-    class Dal
+    public class Dal
     {
         private static string dbPath = string.Empty;
+
+        // Variable for the sqlite database
         private static string DbPath
         {
             get
@@ -26,6 +28,7 @@
             }
         }
 
+        // Method to create a Tournament table
         public static void CreateDatabase()
         {
             // Create a new connection
@@ -39,6 +42,7 @@
             }
         }
 
+        // Method to delete a tournament
         public static void DeleteTournament(Tournament tournament)
         {
             using (var db = new SQLiteConnection(DbPath))
@@ -51,6 +55,7 @@
             }
         }
 
+        // Method to select all tournaments
         public static List<Tournament> GetAllTournaments()
         {
             List<Tournament> models;
@@ -67,6 +72,7 @@
             return models;
         }
 
+        // Method to select a specific tournament
         public static Tournament GetTournamentById(int Id)
         {
             using (var db = new SQLiteConnection(DbPath))
@@ -78,6 +84,7 @@
             }
         }
 
+        // Method to save a tournament
         public static void SaveTournament(Tournament tournament)
         {
             using (var db = new SQLiteConnection(DbPath))

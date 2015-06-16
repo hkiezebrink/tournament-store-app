@@ -3,6 +3,9 @@
     using System.Windows.Input;
     using MVVM;
 
+    /// <summary>
+    /// This class is used to determine if the app is in design or editmode.
+    /// </summary>
     class ViewModelBase : BindableBase
     {
         protected DelegateCommand editCommand; // oops, not private ...

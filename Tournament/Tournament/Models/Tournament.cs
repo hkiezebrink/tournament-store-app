@@ -42,5 +42,10 @@ namespace Tournament.Models
         /// Gets or sets the type.
         /// </summary>
         public string Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets the players.
+        /// </summary>
+        public int Players { get; set; }
     }
 }
