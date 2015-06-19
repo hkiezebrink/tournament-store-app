@@ -123,9 +123,6 @@
     <Compile Include="EnumerationSlider\EnumerationSlider.cs" />
     <Compile Include="EnumerationSlider\StringExtensions.cs" />
     <Compile Include="Helpers\ByteArrayBitmapExtensions.cs" />
-    <Compile Include="Views\Fixtures.xaml.cs">
-      <DependentUpon>Fixtures.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -152,8 +149,10 @@
   <ItemGroup>
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
-    <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\tournament_splash.png" />
+    <Content Include="Assets\tournament_30.png" />
+    <Content Include="Assets\tournament_store.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -161,10 +160,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Themes\Generic.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Fixtures.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

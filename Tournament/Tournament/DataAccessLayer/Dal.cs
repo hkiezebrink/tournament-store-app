@@ -10,6 +10,9 @@
     using Windows.ApplicationModel;
     using Windows.Storage;
 
+    /// <summary>
+    /// The Dal class is used for communicating with the SQLite database. 
+    /// </summary>
     public class Dal
     {
         private static string dbPath = string.Empty;
@@ -19,6 +22,7 @@
         {
             get
             {
+                // If the database path is empty, create a new path to the localfolder.
                 if (string.IsNullOrEmpty(dbPath))
                 {
                     dbPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "Storage.sqlite");

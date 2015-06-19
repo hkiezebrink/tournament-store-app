@@ -9,6 +9,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <!-- BooleanNegationConverter is used for displaying the tournaments in the gridview.
+         BooleanToVisibilityConverter is used for displaying features while in editmode.
+         ReverseBooleanToVisibilityConverter is used for displaying features while in displaymode.-->
     <Page.Resources>
         <mvvm:BooleanNegationConverter x:Key="BooleanNegationConverter" />
         <mvvm:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
@@ -16,10 +19,13 @@
                                            IsReversed="True" />
     </Page.Resources>
 
+    <!-- This Xamlpage communicates all his button commands to MainPageViewModel -->
     <Page.DataContext>
         <vm:MainPageViewModel />
     </Page.DataContext>
 
+    <!-- Defining the application design, the textboxes and buttons. And the binding of the textboxes and buttons.
+    Buttons are bind to the MainPageViewModel. Textboxes are bind to the TournamentViewModel. -->
     <Grid Background="DarkCyan">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -27,7 +33,7 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Tournament Planner" FontFamily="Comic Sans MS"
+        <TextBlock Text="Tournament Planner" FontFamily="Trebuchet MS"
                    FontSize="42"
                    Margin="20"
                    TextAlignment="Left"/>
@@ -43,20 +49,20 @@
                 <AppBarButton Icon="OpenFile"
                               Label="Create"
                               Command="{Binding CreateCommand}" />-->
+                <!-- Select all the tournaments from the database. Binding is to MainPageViewModel. -->
                 <AppBarButton Icon="SelectAll"
                               Label="Select"
                               Command="{Binding SelectCommand}"/>
-                <AppBarButton Icon="Preview"
-                              Label="Fixtures"
-                              x:Name="Fixtures"
-                              Click="Fixtures_Page"/>
-                              
+                <!-- Navigate to the fixtures page.-->
             </StackPanel>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
+                <!-- Display all the tournaments. And the selected tournament. Binding is to MainPageViewModel.
+                Use mode TwoWay to communicate and update changes. Use BooleanNegationConverter to determine which tournament 
+                is selected.-->
                 <GridView SelectionMode="Single"
                           ItemsSource="{Binding Tournaments}"
                           SelectedItem="{Binding SelectedTournament, Mode=TwoWay}"
@@ -76,6 +82,8 @@
                         </DataTemplate>
                     </GridView.ItemTemplate>
                 </GridView>
+                <!-- Buttons for edit, new, and delete. ReverseBooleanToVisibilityConverter means only visible in
+                displaymode. Binding is to MainPageViewModel. -->
                 <StackPanel Visibility="{Binding IsInEditMode, Converter={StaticResource ReverseBooleanToVisibilityConverter}}"
                             Grid.Row="1"
                             Orientation="Horizontal"
@@ -90,6 +98,8 @@
                                   Icon="Delete"
                                   Label="Delete" />
                 </StackPanel>
+                <!-- Buttons for cancel, and save. BooleanToVisibilityConverter means only visible in editmode.
+                Binding is to MainPageViewModel. -->
                 <StackPanel Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
                             Grid.Row="1"
                             Orientation="Horizontal"
@@ -102,11 +112,11 @@
                                   Label="Save" Click="AppBarButton_Click" />
                 </StackPanel>
             </Grid>
-            
-            <!-- Only visible when a tournament is selected. -->
+            <!-- Only visible when a tournament is selected. And while in editmode. -->
             <Border Visibility="{Binding HasSelection, Converter={StaticResource BooleanToVisibilityConverter}}"
                     Grid.Column="2"
                     Margin="20 0">
+                <!-- This grid only displays the data of the selected tournament. -->
                 <Grid DataContext="{Binding SelectedTournament}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto" />
@@ -136,11 +146,14 @@
                                FontSize="20"
                                HorizontalAlignment="Right"
                                FontWeight="Light" />
+                    <!-- Display the tournament type while in displaymode. Binding is to TournamentViewModel. -->
                     <TextBlock Visibility="{Binding IsInEditMode, Converter={StaticResource ReverseBooleanToVisibilityConverter}}"
                                Grid.Column="2"
                                Text="{Binding Type}"
                                FontSize="20" />
-                    
+                    <!-- This radiobutton is not yet working!
+                    Radiobutton to select knockout. Only visible in editmode. Checked actions are described in MainPage.xaml.cs.
+                    Binding is to TournamentViewModel. -->
                     <RadioButton Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
                              Grid.Column="2"
                              Content="Knockout"
@@ -150,7 +163,8 @@
                              Unchecked="Knockout_Unchecked"
                              HorizontalAlignment="Left"
                              IsChecked="{Binding Type, Mode=TwoWay}"/>
-                              
+                    <!-- Radiobutton to select leaque. Only visible in editmode. Checked actions are described in MainPage.xaml.cs.
+                    No binding is currently used. -->
                     <RadioButton Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
                              Grid.Column="2"
                              Content="Leaque"
@@ -159,28 +173,31 @@
                              Checked="Leaque_Checked"
                              Unchecked="Leaque_Unchecked"
                              HorizontalAlignment="Center"/>
-                    
+                    <!-- Combobox for the knockout option. Actions are not yet processed. -->
                     <ComboBox x:Name="Players" Visibility="Collapsed" Grid.Column="2" HorizontalAlignment="Right">
                         <ComboBoxItem Content="2"/>
                         <ComboBoxItem Content="4"/>
                         <ComboBoxItem Content="8"/>
                         <ComboBoxItem Content="16"/>
                     </ComboBox>
-
+                    <!-- This textbox is visible when radiobutton leaque is selected. Binding is to TournamentViewModel.
+                    Mode is TwoWay to communicate and update changes. -->
                     <TextBox x:Name="Numbers" Visibility="Collapsed" Grid.Column="2" HorizontalAlignment="Right"
                              TextChanged="Numbers_Changed" MaxLength="2"
                              Text="{Binding Players, Mode=TwoWay}"/>
-
                     <TextBlock Grid.Row="2"
                                Text="Name"
                                FontSize="20"
                                HorizontalAlignment="Right"
                                FontWeight="Light" />
+                    <!-- Name value which is visible in displaymode. Binding is to TournamentViewModel. -->
                     <TextBlock Visibility="{Binding IsInEditMode, Converter={StaticResource ReverseBooleanToVisibilityConverter}}"
                                Grid.Row="2"
                                Grid.Column="2"
                                Text="{Binding Name}"
                                FontSize="20" />
+                    <!-- Textbox to change the name value. Is only visible in editmode. Binding is to TournamentViewModel.
+                    Mode is TwoWay to communicate and update changes. -->
                     <TextBox Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
                              Grid.Row="2"
                              Grid.Column="2"
@@ -191,13 +208,15 @@
                                FontSize="20"
                                HorizontalAlignment="Right"
                                FontWeight="Light" />
+                    <!-- Displayes the status value, only is displaymode. Binding is to TournamentViewModel. -->
                     <TextBlock Visibility="{Binding IsInEditMode, Converter={StaticResource ReverseBooleanToVisibilityConverter}}"
                                Grid.Row="4"
                                Grid.Column="2"
                                Text="{Binding Status}"
                                FontSize="20" />
                     
-                    <!-- Uses the enum in the status class in ViewModels -->
+                    <!-- The enumerationslider is only visible in editmode. Binding is to TournamentViewModel. The Mode is
+                    TwoWay to communicate and update changes. It uses the enum in status class in ViewModels. -->
                     <e:EnumerationSlider Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
                                                 Enumeration="Tournament.ViewModels.Status"
                                                 Grid.Row="4"
@@ -215,10 +234,12 @@
                             <ColumnDefinition />
                             <ColumnDefinition Width="auto" />
                         </Grid.ColumnDefinitions>
+                        <!-- Displays the image, only in displaymode. Binding is to TournamentViewModel. -->
                         <Image Stretch="Uniform"
                                Source="{Binding ImageSource}"
                                VerticalAlignment="Top"
                                HorizontalAlignment="Left" />
+                        <!-- Button with a command to upload an image. Binding is to TournamentViewModel. -->
                         <AppBarButton Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
                                       Grid.Column="1"
                                       Command="{Binding UploadImageCommand}"
@@ -230,12 +251,15 @@
                                FontSize="20"
                                HorizontalAlignment="Right"
                                FontWeight="Light" />
+                    <!-- Displays the description value, only in displaymode. Binding is to TournamentViewModel. -->
                     <TextBlock Visibility="{Binding IsInEditMode, Converter={StaticResource ReverseBooleanToVisibilityConverter}}"
                                Grid.Row="8"
                                Grid.Column="2"
                                Text="{Binding Description}"
                                FontSize="20"
                                TextWrapping="Wrap" />
+                    <!-- Textbox to change the description value. Is only visible in editmode. Has a TwoWay binding 
+                    to TournamentViewModel. -->
                     <TextBox Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
                              Grid.Row="8"
                              Grid.Column="2"

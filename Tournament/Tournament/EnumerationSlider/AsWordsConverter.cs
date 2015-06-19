@@ -4,7 +4,8 @@
     using Windows.UI.Xaml.Data;
 
     /// <summary>
-    /// Converts CamelCase to words.
+    /// This class is used by the enumeration slider.
+    /// And converts CamelCase to words.
     /// </summary>
     /// <example>'CamelCase' becomes 'Camel case'. </example>
     internal class AsWordsConverter : IValueConverter

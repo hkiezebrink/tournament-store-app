@@ -1,1 +1,1 @@
-C:\Users\NATHAN\WindowsApps\Tournament\Tournament\Tournament.csproj;x86
+C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\Tournament.csproj;x86

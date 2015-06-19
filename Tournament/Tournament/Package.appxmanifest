@@ -4,7 +4,7 @@
   <Properties>
     <DisplayName>Tournament</DisplayName>
     <PublisherDisplayName>NATHAN</PublisherDisplayName>
-    <Logo>Assets\StoreLogo.png</Logo>
+    <Logo>Assets\tournament_store.png</Logo>
   </Properties>
   <Prerequisites>
     <OSMinVersion>6.3.0</OSMinVersion>
@@ -15,8 +15,8 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Tournament.App">
-      <m2:VisualElements DisplayName="Tournament" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Tournament" ForegroundText="light" BackgroundColor="#464646">
-        <m2:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="darkCyan" />
+      <m2:VisualElements DisplayName="Tournament" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\tournament_30.png" Description="Tournament" ForegroundText="light" BackgroundColor="#464646">
+        <m2:SplashScreen Image="Assets\tournament_splash.png" BackgroundColor="darkCyan" />
       </m2:VisualElements>
     </Application>
   </Applications>

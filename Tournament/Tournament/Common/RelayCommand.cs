@@ -8,11 +8,7 @@ using System.Windows.Input;
 namespace Tournament.Common
 {
     /// <summary>
-    /// A command whose sole purpose is to relay its functionality 
-    /// to other objects by invoking delegates. 
-    /// The default return value for the CanExecute method is 'true'.
-    /// <see cref="RaiseCanExecuteChanged"/> needs to be called whenever
-    /// <see cref="CanExecute"/> is expected to return a different value.
+    /// All functionalities of RelayCommand are now in the DelegateCommand class.
     /// </summary>
     public class RelayCommand : ICommand
     {

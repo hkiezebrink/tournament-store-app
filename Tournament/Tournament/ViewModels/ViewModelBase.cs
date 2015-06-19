@@ -4,11 +4,11 @@
     using MVVM;
 
     /// <summary>
-    /// This class is used to determine if the app is in design or editmode.
+    /// This class is used to determine if the app is in designmode or editmode.
     /// </summary>
     class ViewModelBase : BindableBase
     {
-        protected DelegateCommand editCommand; // oops, not private ...
+        protected DelegateCommand editCommand;
         private bool isInEditMode = false;
 
         public ViewModelBase()

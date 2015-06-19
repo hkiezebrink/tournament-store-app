@@ -67,12 +67,6 @@ namespace Tournament
             Numbers.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
 
-        // When the fixtures button is pressed, navigate to the fixtures page.
-        private void Fixtures_Page(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Views.Fixtures));
-        }
-
         // If a string or a zero is entered in the textbox for entering a number of players,
         // set the text to null.
         private void Numbers_Changed(object sender, TextChangedEventArgs e)

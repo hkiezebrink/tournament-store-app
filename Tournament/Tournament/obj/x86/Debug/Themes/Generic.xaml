@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="using:Tournament.EnumerationSlider">
-
+    
+    <!-- Resources used by the enumeration slider. -->
     <local:AsWordsConverter x:Key="AsWordsConverter" />
 
     <Style TargetType="local:EnumerationSlider">

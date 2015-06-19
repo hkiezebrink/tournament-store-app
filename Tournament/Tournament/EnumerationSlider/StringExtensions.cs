@@ -3,6 +3,7 @@
     using System.Text.RegularExpressions;
 
     /// <summary>
+    /// This class is used by the AsWordsConverter class.
     /// Extension methods for the String class.
     /// </summary>
     internal static class StringExtensions

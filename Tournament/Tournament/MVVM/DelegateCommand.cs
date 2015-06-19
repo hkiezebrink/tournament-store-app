@@ -5,8 +5,10 @@ using System.Windows.Input;
 
 namespace Tournament.MVVM
 {
-    /// <summary>
-    /// This class provides two methods to switch between command states. Execute and canExecute. 
+    /// <summary> 
+    /// The DelegateCommand class is equal to the RelayCommand class and inherits from ICommand. 
+    /// This class provides two command states. Execute and canExecute. New DelegateCommand objects
+    /// can now switch between these two states. 
     /// </summary>
     class DelegateCommand : ICommand
     {

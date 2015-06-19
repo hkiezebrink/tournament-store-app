@@ -7,6 +7,9 @@ using SQLite;
 
 namespace Tournament.Models
 {
+    /// <summary>
+    /// This is the model of the MVVM. 
+    /// </summary>
     public class Tournament
     {
         /// <summary>
