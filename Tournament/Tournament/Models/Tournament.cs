@@ -16,7 +16,7 @@ namespace Tournament.Models
         /// Gets or sets the identifier.
         /// </summary>
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public int TournamentId { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -46,9 +46,5 @@ namespace Tournament.Models
         /// </summary>
         public string Type { get; set; }
 
-        /// <summary>
-        /// Gets or sets the players.
-        /// </summary>
-        public int Players { get; set; }
     }
 }

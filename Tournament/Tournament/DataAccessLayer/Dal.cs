@@ -9,6 +9,7 @@
     using Models;
     using Windows.ApplicationModel;
     using Windows.Storage;
+	using System.Collections.ObjectModel;
 
     /// <summary>
     /// The Dal class is used for communicating with the SQLite database. 
@@ -16,6 +17,13 @@
     public class Dal
     {
         private static string dbPath = string.Empty;
+
+		private static ObservableCollection<Player> _players;
+
+		static Dal()
+		{
+			_players = new ObservableCollection<Player>();
+		}
 
         // Variable for the sqlite database
         private static string DbPath
@@ -42,11 +50,15 @@
                 db.Trace = true;
 
                 // Create the table if it does not exist
-                var c = db.CreateTable<Tournament>();
+                //var c = db.CreateTable<Tournament>();
+
+				db.CreateTable<Tournament>();
+				db.CreateTable<Player>();
             }
         }
 
-        // Method to delete a tournament
+		#region Tournament Methods
+		// Method to delete a tournament
         public static void DeleteTournament(Tournament tournament)
         {
             using (var db = new SQLiteConnection(DbPath))
@@ -55,7 +67,7 @@
                 db.Trace = true;
 
                 // SQL Syntax:
-                db.Execute("DELETE FROM Tournament WHERE Id = ?", tournament.Id);
+                db.Execute("DELETE FROM Tournament WHERE Id = ?", tournament.TournamentId);
             }
         }
 
@@ -82,7 +94,7 @@
             using (var db = new SQLiteConnection(DbPath))
             {
                 Tournament m = (from p in db.Table<Tournament>()
-                                where p.Id == Id
+                                where p.TournamentId == Id
                                 select p).FirstOrDefault();
                 return m;
             }
@@ -96,7 +108,7 @@
                 // Activate Tracing
                 db.Trace = true;
 
-                if (tournament.Id == 0)
+                if (tournament.TournamentId == 0)
                 {
                     // New
                     db.Insert(tournament);
@@ -108,5 +120,47 @@
                 }
             }
         }
-    }
+		#endregion	
+
+		#region Player Methods
+		/// <summary>
+		/// Insert player object in Player table 
+		/// </summary>
+		/// <param name="TournamentId"></param>
+		/// <param name="player"></param>
+		/// <returns></returns>
+		public static int InsertPlayer(Player player)
+		{
+			if (Dal.GetTournamentById(player.TournamentId) != null)
+			{
+				using (var db = new SQLiteConnection(DbPath))
+				{
+					 db.Insert(player);
+				}
+			}
+			return player.PlayerId;
+		}
+
+		/// <summary>
+		/// Get all the Players from one Tournament
+		/// </summary>
+		/// <param name="tournamentId"></param>
+		/// <returns></returns>
+		public static ObservableCollection<Player> GetPlayers(int tournamentId)
+		{
+			using (var db = new SQLiteConnection(DbPath))
+			{
+				List<Player> queryResult = (from p in db.Table<Player>() where p.TournamentId == tournamentId select p).ToList();
+				_players = new ObservableCollection<Player>(queryResult);
+			}
+			//using (var db = new SQLiteConnection(DbPath))
+			//{
+			//	List<Player> players = (from p in db.Table<Player>() where p.TournamentId == tournamentId select p).ToList();
+			//	return players;
+			//}
+			return _players;
+		}
+
+		#endregion
+	}
 }

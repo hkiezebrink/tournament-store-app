@@ -2,5 +2,7 @@
   <ReferenceAssemblyList>
     <LocalAssembly PathName="c:\users\nathan\windowsapps\tournament\tournament\obj\x86\debug\intermediatexaml\tournament.exe" HashGuid="4d738afb-7224-c4d1-2f53-6da4a2ea8002" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\microsoft.vclibs\12.0\references\commonconfiguration\neutral\platform.winmd" HashGuid="58b6b6d1-928e-9908-9804-eb460e5e101b" />
+    <ReferenceAssembly PathName="c:\users\harrie\documents\github\tournament-store-app\tournament\packages\sqlite.net-pcl.3.0.5\lib\windows8\sqlite.net.dll" HashGuid="4840b8e3-dc66-6793-97b8-8abc180963b6" />
+    <ReferenceAssembly PathName="c:\users\harrie\documents\github\tournament-store-app\tournament\packages\sqlite.net-pcl.3.0.5\lib\windows8\sqlite.net.platform.winrt.dll" HashGuid="38f34186-7ad1-6b9f-3805-295b67ec275e" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

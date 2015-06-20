@@ -56,11 +56,6 @@
                     return string.Empty;
                 }
 
-                if(this.model.Players > 1)
-                {
-                    return this.model.Type = "Leaque";
-                }
-
                 return this.model.Type;
             }
 
@@ -83,36 +78,14 @@
                     return 0;
                 }
 
-                return this.model.Id;
+                return this.model.TournamentId;
             }
 
             set
             {
                 if (this.model != null)
                 {
-                    this.model.Id = value;
-                    this.OnPropertyChanged();
-                }
-            }
-        }
-
-        public int Players
-        {
-            get
-            {
-                if (this.model == null)
-                {
-                    return 2;
-                }
-
-                return this.model.Players = 2;
-            }
-
-            set
-            {
-                if (this.model != null)
-                {
-                    this.model.Players = value;
+                    this.model.TournamentId = value;
                     this.OnPropertyChanged();
                 }
             }
