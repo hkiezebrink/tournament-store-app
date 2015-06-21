@@ -1,7 +1,7 @@
 ﻿using Tournament.MVVM;
 using Windows.UI.Xaml.Navigation;
 
-namespace Tournament.ViewModels
+namespace Tournament
 {
     /// <summary>
     /// The base model for each model. It uses the BindableBase for easy binding to the View and the use of PropertyChanged events.
@@ -10,5 +10,26 @@ namespace Tournament.ViewModels
     public class ViewModelBase : BindableBase
     {
 		public virtual void OnNavigatedTo(NavigationEventArgs navigationEvent) { }
+
+		public INavigationService NavigationService { get; set; }
+		public bool CanGoBack()
+		{
+			if (NavigationService != null)
+			{
+				return NavigationService.CanGoBack;
+			}
+			else
+			{ 
+				return false;
+			} 
+		}
+		//public virtual bool CanGoForward
+		//{
+		//	get
+		//	{
+		//		if (NavigationService != null) return NavigationService.CanGoForward;
+		//		else return false;
+		//	}
+		//}
 	}
 }

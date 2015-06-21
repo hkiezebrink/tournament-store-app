@@ -1,4 +1,4 @@
-﻿namespace Tournament.ViewModels
+﻿namespace Tournament
 {
     using MVVM;
     using DataAccessLayer;
@@ -275,7 +275,7 @@
 			this.selectedTournament.Model = this.selectedTournament.Model;
 
 			// navigate to AddPlayers page!
-			
+			NavigationService.Navigate("AddPlayers", SelectedTournament.Id);
 		}
 
 		private bool AddPlayers_CanExecute()

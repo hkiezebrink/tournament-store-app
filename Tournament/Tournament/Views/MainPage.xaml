@@ -2,7 +2,6 @@
     x:Class="Tournament.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:vm="using:Tournament.ViewModels"
     xmlns:local="using:Tournament"
     xmlns:mvvm="using:Tournament.MVVM"
     xmlns:e="using:Tournament.EnumerationSlider"
@@ -22,7 +21,7 @@
 
     <!-- This Xamlpage communicates all his button commands to MainPageViewModel -->
     <local:ViewBase.DataContext>
-        <vm:MainPageViewModel />
+        <local:MainPageViewModel />
     </local:ViewBase.DataContext>
 
     <!-- Defining the application design, the textboxes and buttons. And the binding of the textboxes and buttons.
@@ -173,7 +172,7 @@
                     <!-- The enumerationslider is only visible in editmode. Binding is to TournamentViewModel. The Mode is
                     TwoWay to communicate and update changes. It uses the enum in status class in ViewModels. -->
                     <e:EnumerationSlider Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                                Enumeration="Tournament.ViewModels.Status"
+                                                Enumeration="Tournament.Status"
                                                 Grid.Row="4"
                                                 Grid.Column="2"
                                                 Value="{Binding SelectedTournament.StatusString, Mode=TwoWay}"

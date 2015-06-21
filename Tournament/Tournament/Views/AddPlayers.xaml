@@ -3,49 +3,66 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Tournament"
-    xmlns:vm="using:Tournament.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
     <local:ViewBase.DataContext>
-        <vm:AddPlayerViewModel />
+        <local:AddPlayerViewModel />
     </local:ViewBase.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-        <TextBlock Text="{Binding MyString}" HorizontalAlignment="Left" Margin="178,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="145"/>
-        <Button Command="{Binding GetPlayersCommand}" Content="Get Players" HorizontalAlignment="Left" Margin="175,263,0,0" VerticalAlignment="Top"/>
-        <Button Command="{Binding InsertPlayerCommand}" Content="Insert Player" HorizontalAlignment="Left" Margin="347,263,0,0" VerticalAlignment="Top" />
-        <ListView ItemsSource="{Binding Players}" 
-                  HorizontalAlignment="Left" 
-                  Height="590" Margin="887,79,0,0" 
-                  BorderBrush="Azure" 
-                  BorderThickness="2" 
-                  VerticalAlignment="Top" 
-                  Width="263">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Vertical" Margin="10">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Naam:" Margin="0,0,10,0" />
-                            <TextBlock Text="{Binding Name}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="backButton"
+                    Command="{Binding GoBackCommand}"
+                    Height="100"
+                    Width="120"
+                    Style="{StaticResource NavigationBackButtonNormalStyle}" />
+            <TextBlock x:Name="pageTitle"
+                       Text="Hello World"
+                       Grid.Column="1"
+                       IsHitTestVisible="false" VerticalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Button Command="{Binding InsertPlayerCommand}" Content="Insert Player" HorizontalAlignment="Left" Margin="463,185,0,0" VerticalAlignment="Top" />
+            <Button Command="{Binding GenerateScheduleCommand}" Content="Generate Schedule" HorizontalAlignment="Left" Margin="1183,185,0,0" VerticalAlignment="Top" />
+            <ListView ItemsSource="{Binding Players}" 
+                      HorizontalAlignment="Left" 
+                      Height="590" Margin="887,79,0,0" 
+                      BorderBrush="Azure" 
+                      BorderThickness="2" 
+                      VerticalAlignment="Top" 
+                      Width="263">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Margin="10">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Naam:" Margin="0,0,10,0" />
+                                <TextBlock Text="{Binding Name}" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="PlayerId:" Margin="0,0,10,0" />
+                                <TextBlock Text="{Binding Id}" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="TournamentId:" Margin="0,0,10,0" />
+                                <TextBlock Text="{Binding TournamentId}" />
+                            </StackPanel>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="PlayerId:" Margin="0,0,10,0" />
-                            <TextBlock Text="{Binding Id}" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="TournamentId:" Margin="0,0,10,0" />
-                            <TextBlock Text="{Binding TournamentId}" />
-                        </StackPanel>
-                    </StackPanel>
                         
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <TextBox Text="{Binding PlayerName, Mode=TwoWay}" HorizontalAlignment="Left" Margin="178,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
-
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TextBox Text="{Binding PlayerName, Mode=TwoWay}" HorizontalAlignment="Left" Margin="178,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
+        </Grid>
 
 
 

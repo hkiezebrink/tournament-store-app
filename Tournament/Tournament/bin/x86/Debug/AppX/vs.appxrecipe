@@ -17,13 +17,13 @@
     <AppXManifest Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-06-21T12:33:06.924</Modified>
+      <Modified>2015-06-21T14:27:26.968</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\Tournament.exe">
       <PackagePath>Tournament.exe</PackagePath>
-      <Modified>2015-06-21T12:33:06.762</Modified>
+      <Modified>2015-06-21T14:58:25.401</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLite.WinRT81\3.8.10.2\Redist\Debug\x86\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
@@ -59,23 +59,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-06-21T12:08:40.004</Modified>
+      <Modified>2015-06-21T14:27:24.381</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\Themes\Generic.xbf">
       <PackagePath>Themes\Generic.xbf</PackagePath>
-      <Modified>2015-06-21T12:08:40.004</Modified>
+      <Modified>2015-06-21T14:27:24.381</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\Views\AddPlayers.xbf">
       <PackagePath>Views\AddPlayers.xbf</PackagePath>
-      <Modified>2015-06-21T12:33:06.452</Modified>
+      <Modified>2015-06-21T14:57:39.830</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\Views\MainPage.xbf">
       <PackagePath>Views\MainPage.xbf</PackagePath>
-      <Modified>2015-06-21T12:33:06.452</Modified>
+      <Modified>2015-06-21T14:57:39.830</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-06-21T12:33:06.858</Modified>
+      <Modified>2015-06-21T14:27:26.808</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

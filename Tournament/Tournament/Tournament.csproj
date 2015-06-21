@@ -126,6 +126,8 @@
     <Compile Include="Models\Player.cs" />
     <Compile Include="DataAccessLayer\SQLite.cs" />
     <Compile Include="DataAccessLayer\SQLiteAsync.cs" />
+    <Compile Include="Services\INavigationService.cs" />
+    <Compile Include="Services\NavigationService.cs" />
     <Compile Include="ViewModels\AddPlayerViewModel.cs" />
     <Compile Include="Views\AddPlayers.xaml.cs">
       <DependentUpon>AddPlayers.xaml</DependentUpon>
@@ -181,9 +183,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

@@ -1,4 +1,4 @@
-﻿namespace Tournament.ViewModels
+﻿namespace Tournament
 {
     using MVVM;
     using Models;

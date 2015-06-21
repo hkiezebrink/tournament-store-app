@@ -70,6 +70,7 @@ namespace Tournament
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
+			NavigationService.Frame = rootFrame;
 
             if (rootFrame.Content == null)
             {
