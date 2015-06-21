@@ -54,6 +54,7 @@
 
 				db.CreateTable<Tournament>();
 				db.CreateTable<Player>();
+				db.CreateTable<Fixture>();
             }
         }
 
@@ -67,7 +68,9 @@
                 db.Trace = true;
 
                 // SQL Syntax:
-                db.Execute("DELETE FROM Tournament WHERE TournamentId = ?", tournament.TournamentId);
+				db.Execute("DELETE FROM Tournament WHERE TournamentId = ?", tournament.TournamentId);
+				db.Execute("DELETE FROM Player WHERE TournamentId = ?", tournament.TournamentId);
+				db.Execute("DELETE FROM Fixture WHERE TournamentId = ?", tournament.TournamentId);
             }
         }
 
@@ -157,6 +160,77 @@
 			return _players;
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="players"></param>
+		/// <param name="tournamentId"></param>
+		/// <returns></returns>
+		public static bool InsertPlayers(ObservableCollection<Player> players, int tournamentId)
+		{
+			bool success = false; 
+			if (Dal.GetTournamentById(tournamentId) != null)
+			{
+				using (var db = new SQLiteConnection(DbPath))
+				{
+					foreach (Player player in players)
+					{
+						player.TournamentId = tournamentId;
+						db.Insert(player);	
+					}
+					success = true;
+				}
+			}
+			return success;
+		}
+
 		#endregion
+
+		#region Matches
+
+		/// <summary>
+		/// Insert a collection of Fixture object in the database
+		/// </summary>
+		/// <param name="fixtures"></param>
+		/// <param name="tournamentId"></param>
+		/// <returns></returns>
+		public static bool InsertFixtures(List<Fixture> fixtures, int tournamentId)
+		{
+			bool success = false;
+			if (Dal.GetTournamentById(tournamentId) != null)
+			{
+				using (var db = new SQLiteConnection(DbPath))
+				{
+					foreach (Fixture match in fixtures)
+					{
+						match.TournamentId = tournamentId;
+						db.Insert(match);
+					}
+					success = true;
+				}
+			}
+			return success;
+		}
+
+		/// <summary>
+		/// Get all the Fixtures from one Tournament
+		/// </summary>
+		/// <param name="tournamentId"></param>
+		/// <returns></returns>
+		public static ObservableCollection<Fixture> GetFixtures(int tournamentId)
+		{
+			ObservableCollection<Fixture> _fixtures = new ObservableCollection<Fixture>();
+			using (var db = new SQLiteConnection(DbPath))
+			{
+				List<Fixture> queryResult = (from p in db.Table<Fixture>() where p.TournamentId == tournamentId select p).ToList();
+				_fixtures = new ObservableCollection<Fixture>(queryResult);
+			}
+
+			return _fixtures;
+		}
+
+		#endregion
+
+		
 	}
 }
