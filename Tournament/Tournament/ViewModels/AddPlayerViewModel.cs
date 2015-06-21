@@ -13,6 +13,7 @@ using Tournament.DataAccessLayer;
 using Tournament.Models;
 using Tournament.MVVM;
 using Windows.Storage;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Navigation;
 
 namespace Tournament
@@ -92,8 +93,19 @@ namespace Tournament
 			NavigationService.GoBack();
 		}
 
-		private void GenerateSchedule()
+		private async void GenerateSchedule()
 		{
+			bool result = false;
+
+			MessageDialog message = new MessageDialog("Do you wish to leave this page?");
+			message.Commands.Add(new UICommand("OK", new UICommandInvokedHandler((cmd) => result = true)));
+			message.Commands.Add(new UICommand("Cancel"));
+			await message.ShowAsync();
+
+			if (result)
+			{
+				NavigationService.GoHome();
+			}
 			// TODO Generate schedule
 			/* Maak een tijdelijk lijst met Player objecten
 			 * en zodra het aantal van deze lijst groter is dan 1
@@ -110,13 +122,12 @@ namespace Tournament
 			{
 				return;
 			}
-			Player player = new Player {Name = this.PlayerName.Trim(), TournamentId = 1};
+			Player player = new Player {Name = this.PlayerName.Trim(), TournamentId = _tournamentId};
 
 			_players.Add(player);
 			// Empty PlayerName
-			Dal.InsertPlayer(player);
+			// Dal.InsertPlayer(player);
 			PlayerName = String.Empty;
-
 			OnPropertyChanged("Players");
 		}
 		
@@ -129,8 +140,8 @@ namespace Tournament
 		/// <param name="tournamentId"></param>
 		private void GetPlayersData(int tournamentId)
 		{
-			_players = Dal.GetPlayers(tournamentId);
-			OnPropertyChanged("Players");
+			// _players = Dal.GetPlayers(tournamentId);
+			// OnPropertyChanged("Players");
 		}
 
 		/// <summary>
@@ -140,7 +151,7 @@ namespace Tournament
 		public override void OnNavigatedTo(NavigationEventArgs navigationEvent)
 		{
 			_tournamentId = (int)navigationEvent.Parameter;
-			GetPlayersData(_tournamentId);
+			//GetPlayersData(_tournamentId);
 		}
 	}
 }

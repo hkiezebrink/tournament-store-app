@@ -32,8 +32,8 @@
                        IsHitTestVisible="false" VerticalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" />
         </Grid>
         <Grid Grid.Row="1">
-            <Button Command="{Binding InsertPlayerCommand}" Content="Insert Player" HorizontalAlignment="Left" Margin="463,185,0,0" VerticalAlignment="Top" />
-            <Button Command="{Binding GenerateScheduleCommand}" Content="Generate Schedule" HorizontalAlignment="Left" Margin="1183,185,0,0" VerticalAlignment="Top" />
+            <Button TabIndex="1" Command="{Binding InsertPlayerCommand}" Content="Insert Player" HorizontalAlignment="Left" Margin="463,185,0,0" VerticalAlignment="Top" />
+            <Button TabIndex="1" Command="{Binding GenerateScheduleCommand}" Content="Generate Schedule" HorizontalAlignment="Left" Margin="1183,185,0,0" VerticalAlignment="Top" />
             <ListView ItemsSource="{Binding Players}" 
                       HorizontalAlignment="Left" 
                       Height="590" Margin="887,79,0,0" 

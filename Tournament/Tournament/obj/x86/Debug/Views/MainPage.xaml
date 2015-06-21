@@ -50,9 +50,9 @@
                               Label="Create"
                               Command="{Binding CreateCommand}" />-->
                 <!-- Select all the tournaments from the database. Binding is to MainPageViewModel. -->
-                <AppBarButton Icon="SelectAll"
-                              Label="Select"
-                              Command="{Binding SelectCommand}" FontFamily="Global User Interface"/>
+                <AppBarButton Icon="People"
+                              Label="Matches"
+                              Command="{Binding ShowScheduleCommand}" FontSize="14" />
                 
                 <!-- Navigate to the fixtures page.-->
             </StackPanel>
@@ -104,16 +104,18 @@
                 <StackPanel Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
                             Grid.Row="1"
                             Orientation="Horizontal"
-                            HorizontalAlignment="Right">
+                            HorizontalAlignment="Left">
                     <AppBarButton Command="{Binding CancelCommand}"
                                   Icon="Cancel"
                                   Label="Cancel" />
                     <AppBarButton Command="{Binding SaveCommand}"
                                   Icon="Save"
-                                  Label="Save" />
+                                  Label="Save"
+                                  Visibility="{Binding IsNewCreated, Converter={StaticResource ReverseBooleanToVisibilityConverter}}"/>
                     <AppBarButton Label="Add Players"
                                   Command="{Binding AddPlayersCommand}" 
-                                  Icon="AddFriend"/>
+                                  Icon="AddFriend"
+                                  Visibility="{Binding IsNewCreated, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                 </StackPanel>
             </Grid>
             <!-- Only visible when a tournament is selected. And while in editmode. -->

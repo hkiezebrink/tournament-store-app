@@ -25,7 +25,7 @@
         private DelegateCommand newCommand;
         private ObservableCollection<TournamentViewModel> tournaments = new ObservableCollection<TournamentViewModel>();
         private DelegateCommand saveCommand;
-        private DelegateCommand selectCommand;
+        private DelegateCommand showScheduleCommand;
 
 		private DelegateCommand addPlayersCommand;
 
@@ -47,15 +47,28 @@
 
             // Initiate the delegate commands.
             this.createCommand = new DelegateCommand(this.Create_Executed);
-            this.selectCommand = new DelegateCommand(this.Select_Executed);
+			this.showScheduleCommand = new DelegateCommand(this.ShowSchedule, this.TournamentSelected);
             this.newCommand = new DelegateCommand(this.New_Executed, this.New_CanExecute);
-            this.deleteCommand = new DelegateCommand(this.Delete_Executed, this.Edit_CanExecute);
+            this.deleteCommand = new DelegateCommand(this.Delete_Executed, this.TournamentSelected);
             this.saveCommand = new DelegateCommand(this.Save_Executed, this.Save_CanExecute);
             this.cancelCommand = new DelegateCommand(this.Cancel_Executed, this.Save_CanExecute);
 			this.addPlayersCommand = new DelegateCommand(this.AddPlayers_Executed, this.AddPlayers_CanExecute);
-			this.editCommand = new DelegateCommand(this.Edit_Executed, this.Edit_CanExecute);
+			this.editCommand = new DelegateCommand(this.Edit_Executed, this.TournamentSelected);
+
+			// TODO create database
+			Dal.CreateDatabase();
         }
 
+		private bool TournamentSelected()
+		{
+			return selectedTournament != null;
+		}
+
+		private void ShowSchedule()
+		{
+			// TODO navigate to Matches page (not created yet)
+			// NavigationService.Navigate("Matches");				
+		}
 
 		public ICommand EditCommand
 		{
@@ -84,9 +97,9 @@
 		
 
 		#region Commands
-		public ICommand SelectCommand
+		public ICommand ShowScheduleCommand
 		{
-			get { return this.selectCommand; }
+			get { return this.showScheduleCommand; }
 		}
 
 		public ICommand CancelCommand
@@ -157,14 +170,15 @@
                 this.SetProperty(ref this.selectedTournament, value);
                 this.HasSelection = this.selectedTournament != null;
                 this.deleteCommand.RaiseCanExecuteChanged();
-                this.editCommand.RaiseCanExecuteChanged();
+				this.editCommand.RaiseCanExecuteChanged();
+				this.showScheduleCommand.RaiseCanExecuteChanged();
             }
         }
 
         // True if a tournament is selected.
         protected bool Edit_CanExecute()
         {
-			return this.selectedTournament != null && !this.IsInEditMode;
+			return this.selectedTournament != null;
         }
 
         // Editmode is true. And designmode is false.
@@ -199,7 +213,7 @@
             Dal.CreateDatabase();
 
             // Select. Otherwise the displayed list may be out of sync with the db.
-            this.selectCommand.Execute(null);
+			Select_Executed();
         }
 
         // Delete a tournament from the db.
@@ -250,7 +264,7 @@
         private void Select_Executed()
         {
             // Also create a new db. Because the new button in mainpage.xaml is not used.
-            Dal.CreateDatabase();
+            // Dal.CreateDatabase();
 
             List<Tournament> models = Dal.GetAllTournaments();
 
@@ -280,6 +294,7 @@
 
 		private bool AddPlayers_CanExecute()
 		{
+			// TODO klopt dit?
 			return true;
 		}
 

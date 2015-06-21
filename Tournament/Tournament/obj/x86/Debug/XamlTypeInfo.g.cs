@@ -412,7 +412,7 @@ namespace Tournament.Tournament_XamlTypeInfo
                 userType.AddMemberName("EditCommand");
                 userType.AddMemberName("IsInDesignMode");
                 userType.AddMemberName("IsInEditMode");
-                userType.AddMemberName("SelectCommand");
+                userType.AddMemberName("ShowScheduleCommand");
                 userType.AddMemberName("CancelCommand");
                 userType.AddMemberName("CreateCommand");
                 userType.AddMemberName("DeleteCommand");
@@ -639,10 +639,10 @@ namespace Tournament.Tournament_XamlTypeInfo
             var that = (global::Tournament.MainPageViewModel)instance;
             that.IsInEditMode = (global::System.Boolean)Value;
         }
-        private object get_16_MainPageViewModel_SelectCommand(object instance)
+        private object get_16_MainPageViewModel_ShowScheduleCommand(object instance)
         {
             var that = (global::Tournament.MainPageViewModel)instance;
-            return that.SelectCommand;
+            return that.ShowScheduleCommand;
         }
         private object get_17_MainPageViewModel_CancelCommand(object instance)
         {
@@ -896,10 +896,10 @@ namespace Tournament.Tournament_XamlTypeInfo
                 xamlMember.Getter = get_15_MainPageViewModel_IsInEditMode;
                 xamlMember.Setter = set_15_MainPageViewModel_IsInEditMode;
                 break;
-            case "Tournament.MainPageViewModel.SelectCommand":
+            case "Tournament.MainPageViewModel.ShowScheduleCommand":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.MainPageViewModel");
-                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "SelectCommand", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_16_MainPageViewModel_SelectCommand;
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "ShowScheduleCommand", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_16_MainPageViewModel_ShowScheduleCommand;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Tournament.MainPageViewModel.CancelCommand":
