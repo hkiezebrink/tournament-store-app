@@ -13,7 +13,7 @@
     /// This class is used for binding the user input in the mainpage.xaml. When binding is TwoWay both the
     /// getter and setter are used. Else only the getter is used.
     /// </summary>
-    class TournamentViewModel : ViewModelBase
+    public class TournamentViewModel : ViewModelBase
     {
         private Tournament model;
         private ImageSource picture = null;

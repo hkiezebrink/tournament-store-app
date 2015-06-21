@@ -18,13 +18,13 @@ namespace Tournament.Models
 		/// <summary>
 		/// Gets or sets the name.
 		/// </summary>
-		[MaxLength(64), Unique]
+		[MaxLength(64)]
 		public string Name { get; set; }
 
 		/// <summary>
 		/// Tournament identifier
 		/// </summary>
-		[Indexed]
+		[NotNull]
 		public int TournamentId { get; set; }
 
 	}

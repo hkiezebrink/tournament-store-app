@@ -124,6 +124,8 @@
     <Compile Include="EnumerationSlider\StringExtensions.cs" />
     <Compile Include="Helpers\ByteArrayBitmapExtensions.cs" />
     <Compile Include="Models\Player.cs" />
+    <Compile Include="DataAccessLayer\SQLite.cs" />
+    <Compile Include="DataAccessLayer\SQLiteAsync.cs" />
     <Compile Include="ViewModels\AddPlayerViewModel.cs" />
     <Compile Include="Views\AddPlayers.xaml.cs">
       <DependentUpon>AddPlayers.xaml</DependentUpon>
@@ -137,12 +139,11 @@
     <Compile Include="MVVM\BooleanToVisibilityConverter.cs" />
     <Compile Include="MVVM\DelegateCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DataAccessLayer\SQLite.cs" />
-    <Compile Include="DataAccessLayer\SQLiteAsync.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\Status.cs" />
     <Compile Include="ViewModels\TournamentViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\ViewBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -178,14 +179,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="SQLite.Net, Version=3.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLite.Net-PCL.3.0.5\lib\Windows8\SQLite.Net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLite.Net.Platform.WinRT, Version=3.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLite.Net-PCL.3.0.5\lib\Windows8\SQLite.Net.Platform.WinRT.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

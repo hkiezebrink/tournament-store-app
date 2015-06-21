@@ -120,7 +120,4 @@ C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\obj\
 C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\obj\x86\Debug\Views\AddPlayers.g.cs
 C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\obj\x86\Debug\Views\AddPlayers.xaml
 C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\obj\x86\Debug\Views\AddPlayers.xbf
-C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\obj\x86\Debug\Tournament.csprojResolveAssemblyReference.cache
 C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\Views\AddPlayers.xbf
-C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\SQLite.Net.dll
-C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\SQLite.Net.Platform.WinRT.dll

@@ -9,7 +9,7 @@ namespace Tournament.ViewModels
     /// <summary>
     ///  Defines the tournament status. Is used by the enumeration slider in the mainpage.xaml.
     /// </summary>
-    enum Status
+    public enum Status
     {
         Planned,
         Playing,

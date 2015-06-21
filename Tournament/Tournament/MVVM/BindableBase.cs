@@ -8,7 +8,7 @@
     /// Implementation of <see cref="INotifyPropertyChanged"/> to simplify models.
     /// </summary>
     [Windows.Foundation.Metadata.WebHostHidden]
-    abstract class BindableBase : INotifyPropertyChanged
+    public abstract class BindableBase : INotifyPropertyChanged
     {
         /// <summary>
         /// Multicast event for property change notifications.

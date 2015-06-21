@@ -1,58 +1,14 @@
-﻿namespace Tournament.ViewModels
+﻿using Tournament.MVVM;
+using Windows.UI.Xaml.Navigation;
+
+namespace Tournament.ViewModels
 {
-    using System.Windows.Input;
-    using MVVM;
-
     /// <summary>
-    /// This class is used to determine if the app is in designmode or editmode.
+    /// The base model for each model. It uses the BindableBase for easy binding to the View and the use of PropertyChanged events.
+	/// This ViewModelBase uses the NavigationService which activates navigation in every ViewModel
     /// </summary>
-    class ViewModelBase : BindableBase
+    public class ViewModelBase : BindableBase
     {
-        protected DelegateCommand editCommand;
-        private bool isInEditMode = false;
-
-        public ViewModelBase()
-        {
-            if (this.IsInDesignMode)
-            {
-                return;
-            }
-
-            this.editCommand = new DelegateCommand(this.Edit_Executed, this.Edit_CanExecute);
-        }
-
-        public ICommand EditCommand
-        {
-            get { return this.editCommand; }
-        }
-
-        public bool IsInDesignMode
-        {
-            get { return Windows.ApplicationModel.DesignMode.DesignModeEnabled; }
-        }
-
-        public bool IsInEditMode
-        {
-            get
-            {
-                return this.isInEditMode;
-            }
-
-            set
-            {
-                this.SetProperty(ref this.isInEditMode, value);
-                this.editCommand.RaiseCanExecuteChanged();
-            }
-        }
-
-        protected virtual bool Edit_CanExecute()
-        {
-            return !this.IsInEditMode;
-        }
-
-        protected virtual void Edit_Executed()
-        {
-            this.IsInEditMode = true;
-        }
-    }
+		public virtual void OnNavigatedTo(NavigationEventArgs navigationEvent) { }
+	}
 }

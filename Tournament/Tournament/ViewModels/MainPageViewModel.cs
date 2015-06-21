@@ -8,12 +8,14 @@
     using System.Linq;
     using System.Windows.Input;
     using Helpers;
+	using System;
+	using Windows.UI.Xaml.Navigation;
 
     /// <summary>
     /// This class is connected to the mainpage.xaml. And defines the different commands within mainpage.xaml.
     /// It uses ICommands to perform actions.
     /// </summary>
-    class MainPageViewModel : ViewModelBase
+    public class MainPageViewModel : ViewModelBase
     {
         // Declare delegate commands.
         private DelegateCommand cancelCommand;
@@ -24,8 +26,18 @@
         private ObservableCollection<TournamentViewModel> tournaments = new ObservableCollection<TournamentViewModel>();
         private DelegateCommand saveCommand;
         private DelegateCommand selectCommand;
+
+		private DelegateCommand addPlayersCommand;
+
         private TournamentViewModel selectedTournament = null;
         private bool isDatabaseCreated = false;
+
+		private bool isNewCreated = false;
+
+		private DelegateCommand editCommand;
+		private bool isInEditMode = false;
+
+
         public MainPageViewModel()
         {
             if (this.IsInDesignMode)
@@ -40,25 +52,87 @@
             this.deleteCommand = new DelegateCommand(this.Delete_Executed, this.Edit_CanExecute);
             this.saveCommand = new DelegateCommand(this.Save_Executed, this.Save_CanExecute);
             this.cancelCommand = new DelegateCommand(this.Cancel_Executed, this.Save_CanExecute);
+			this.addPlayersCommand = new DelegateCommand(this.AddPlayers_Executed, this.AddPlayers_CanExecute);
+			this.editCommand = new DelegateCommand(this.Edit_Executed, this.Edit_CanExecute);
         }
 
-        /// <summary>
+
+		public ICommand EditCommand
+		{
+			get { return this.editCommand; }
+		}
+
+		public bool IsInDesignMode
+		{
+			get { return Windows.ApplicationModel.DesignMode.DesignModeEnabled; }
+		}
+
+		public bool IsInEditMode
+		{
+			get
+			{
+				return this.isInEditMode;
+			}
+
+			set
+			{
+				this.SetProperty(ref this.isInEditMode, value);
+				this.editCommand.RaiseCanExecuteChanged();
+			}
+		}
+
+		
+
+		#region Commands
+		public ICommand SelectCommand
+		{
+			get { return this.selectCommand; }
+		}
+
+		public ICommand CancelCommand
+		{
+			get { return this.cancelCommand; }
+		}
+
+		public ICommand CreateCommand
+		{
+			get { return this.createCommand; }
+		}
+
+		public ICommand DeleteCommand
+		{
+			get { return this.deleteCommand; }
+		}
+
+		public ICommand NewCommand
+		{
+			get { return this.newCommand; }
+		}
+
+		public ICommand SaveCommand
+		{
+			get { return this.saveCommand; }
+		}
+
+		public ICommand AddPlayersCommand
+		{
+			get { return this.addPlayersCommand; }
+		}
+
+		
+		#endregion
+		/// <summary>
         /// The following commands are bindings to the buttons in mainpage.xaml.
         /// </summary>
-        public ICommand CancelCommand
-        {
-            get { return this.cancelCommand; }
-        }
 
-        public ICommand CreateCommand
-        {
-            get { return this.createCommand; }
-        }
 
-        public ICommand DeleteCommand
-        {
-            get { return this.deleteCommand; }
-        }
+        
+
+		public bool IsNewCreated
+		{
+			get { return isNewCreated; }
+			private set { this.SetProperty(ref this.isNewCreated, value); }
+		}
 
         public bool HasSelection
         {
@@ -66,10 +140,7 @@
             private set { this.SetProperty(ref this.hasSelection, value); }
         }
 
-        public ICommand NewCommand
-        {
-            get { return this.newCommand; }
-        }
+        
 
         public ObservableCollection<TournamentViewModel> Tournaments
         {
@@ -77,15 +148,7 @@
             set { this.SetProperty(ref this.tournaments, value); }
         }
 
-        public ICommand SaveCommand
-        {
-            get { return this.saveCommand; }
-        }
-
-        public ICommand SelectCommand
-        {
-            get { return this.selectCommand; }
-        }
+        
         public TournamentViewModel SelectedTournament
         {
             get { return this.selectedTournament; }
@@ -99,16 +162,15 @@
         }
 
         // True if a tournament is selected.
-        protected override bool Edit_CanExecute()
+        protected bool Edit_CanExecute()
         {
-            return this.selectedTournament != null && base.Edit_CanExecute();
+			return this.selectedTournament != null && !this.IsInEditMode;
         }
 
         // Editmode is true. And designmode is false.
-        protected override void Edit_Executed()
+        protected void Edit_Executed()
         {
-            base.Edit_Executed();
-            this.selectedTournament.IsInEditMode = true;
+			this.IsInEditMode = true; ;
             this.saveCommand.RaiseCanExecuteChanged();
             this.cancelCommand.RaiseCanExecuteChanged();
         }
@@ -124,10 +186,10 @@
             {
                 // Get old one back from db.
                 this.selectedTournament.Model = Dal.GetTournamentById(this.selectedTournament.Id);
-                this.selectedTournament.IsInEditMode = false;
             }
 
             this.IsInEditMode = false;
+			this.IsNewCreated = false;
         }
 
         // This method is not used. The db is now created when the select button is pressed.
@@ -161,13 +223,14 @@
         {
             this.tournaments.Add(new TournamentViewModel(new Tournament()));
             this.SelectedTournament = this.tournaments.Last();
+			this.IsNewCreated = true;
             this.editCommand.Execute(null);
         }
 
         // True while in editmode. For saving a tournament.
         private bool Save_CanExecute()
         {
-            return this.IsInEditMode;
+			return this.IsInEditMode;
         }
 
         // Save the selected tournament in the db. Binding is with the save button in mainpage.xaml.
@@ -180,7 +243,7 @@
 
             // Leave edit mode.
             this.IsInEditMode = false;
-            this.selectedTournament.IsInEditMode = false;
+			this.IsNewCreated = false;
         }
 
         // Select all tournaments from the db. Binding is with the select button in mainpage.xaml.
@@ -200,5 +263,29 @@
             this.isDatabaseCreated = true;
             this.newCommand.RaiseCanExecuteChanged();
         }
+
+		/// <summary>
+		/// Move to AddPlayer view
+		/// </summary>
+		private void AddPlayers_Executed()
+		{
+			// Store new one in db.
+			Dal.SaveTournament(this.selectedTournament.Model);
+
+			this.selectedTournament.Model = this.selectedTournament.Model;
+
+			// navigate to AddPlayers page!
+			
+		}
+
+		private bool AddPlayers_CanExecute()
+		{
+			return true;
+		}
+
+		public override void OnNavigatedTo(NavigationEventArgs navigationEvent)
+		{
+			Select_Executed();
+		}
     }
 }

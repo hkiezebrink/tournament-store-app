@@ -45,6 +45,5 @@ namespace Tournament.Models
         /// Gets or sets the type.
         /// </summary>
         public string Type { get; set; }
-
     }
 }

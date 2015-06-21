@@ -67,7 +67,7 @@
                 db.Trace = true;
 
                 // SQL Syntax:
-                db.Execute("DELETE FROM Tournament WHERE Id = ?", tournament.TournamentId);
+                db.Execute("DELETE FROM Tournament WHERE TournamentId = ?", tournament.TournamentId);
             }
         }
 
@@ -153,11 +153,7 @@
 				List<Player> queryResult = (from p in db.Table<Player>() where p.TournamentId == tournamentId select p).ToList();
 				_players = new ObservableCollection<Player>(queryResult);
 			}
-			//using (var db = new SQLiteConnection(DbPath))
-			//{
-			//	List<Player> players = (from p in db.Table<Player>() where p.TournamentId == tournamentId select p).ToList();
-			//	return players;
-			//}
+
 			return _players;
 		}
 

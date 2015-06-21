@@ -1,16 +1,16 @@
-﻿<Page
-    x:Class="Tournament.Views.AddPlayers"
+﻿<local:ViewBase
+    x:Class="Tournament.AddPlayers"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Tournament.Views"
+    xmlns:local="using:Tournament"
     xmlns:vm="using:Tournament.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Page.DataContext>
+    <local:ViewBase.DataContext>
         <vm:AddPlayerViewModel />
-    </Page.DataContext>
+    </local:ViewBase.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -50,4 +50,4 @@
 
 
     </Grid>
-</Page>
+</local:ViewBase>
