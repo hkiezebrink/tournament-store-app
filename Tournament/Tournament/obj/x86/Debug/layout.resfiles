@@ -7,4 +7,5 @@ Assets\tournament_store.png
 App.xbf
 Themes\Generic.xbf
 Views\AddPlayers.xbf
-Views\MainPage.xbf
+Views\Matches.xbf
+Views\Overview.xbf

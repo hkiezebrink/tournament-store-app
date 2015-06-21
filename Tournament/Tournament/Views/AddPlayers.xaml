@@ -13,10 +13,10 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="140" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid>
+        <!-- <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="140" />
                 <ColumnDefinition Width="*" />
@@ -25,12 +25,12 @@
                     Command="{Binding GoBackCommand}"
                     Height="100"
                     Width="120"
-                    Style="{StaticResource NavigationBackButtonNormalStyle}" />
+                    Style="{StaticResource NavigationBackButtonNormalStyle}" FontFamily="Global User Interface" />
             <TextBlock x:Name="pageTitle"
                        Text="Hello World"
                        Grid.Column="1"
-                       IsHitTestVisible="false" VerticalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" />
-        </Grid>
+                       IsHitTestVisible="false" VerticalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" FontFamily="Global User Interface" />
+        </Grid> -->
         <Grid Grid.Row="1">
             <Button TabIndex="1" Command="{Binding InsertPlayerCommand}" Content="Insert Player" HorizontalAlignment="Left" Margin="463,185,0,0" VerticalAlignment="Top" />
             <Button TabIndex="1" Command="{Binding GenerateScheduleCommand}" Content="Generate Schedule" HorizontalAlignment="Left" Margin="1183,185,0,0" VerticalAlignment="Top" />
@@ -64,7 +64,21 @@
             <TextBox Text="{Binding PlayerName, Mode=TwoWay}" HorizontalAlignment="Left" Margin="178,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
         </Grid>
 
-
+        <!-- Back button and page title -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding GoBackCommand}"
+                        Style="{StaticResource NavigationBackButtonNormalStyle}"
+                        VerticalAlignment="Top"
+                        AutomationProperties.Name="Back"
+                        AutomationProperties.AutomationId="BackButton"
+                        AutomationProperties.ItemType="Navigation Button" FontFamily="Global User Interface"/>
+            <TextBlock x:Name="pageTitle" Text="{Binding TournamentName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" FontFamily="Global User Interface"/>
+        </Grid>
 
     </Grid>
 </local:ViewBase>

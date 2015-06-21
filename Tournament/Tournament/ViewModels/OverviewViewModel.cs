@@ -15,7 +15,7 @@
     /// This class is connected to the mainpage.xaml. And defines the different commands within mainpage.xaml.
     /// It uses ICommands to perform actions.
     /// </summary>
-    public class MainPageViewModel : ViewModelBase
+    public class OverviewViewModel : ViewModelBase
     {
         // Declare delegate commands.
         private DelegateCommand cancelCommand;
@@ -38,7 +38,7 @@
 		private bool isInEditMode = false;
 
 
-        public MainPageViewModel()
+        public OverviewViewModel()
         {
             if (this.IsInDesignMode)
             {
@@ -47,17 +47,22 @@
 
             // Initiate the delegate commands.
             this.createCommand = new DelegateCommand(this.Create_Executed);
-			this.showScheduleCommand = new DelegateCommand(this.ShowSchedule, this.TournamentSelected);
+			this.showScheduleCommand = new DelegateCommand(this.ShowSchedule, this.ShowShedule_CanExecute);
             this.newCommand = new DelegateCommand(this.New_Executed, this.New_CanExecute);
             this.deleteCommand = new DelegateCommand(this.Delete_Executed, this.TournamentSelected);
             this.saveCommand = new DelegateCommand(this.Save_Executed, this.Save_CanExecute);
             this.cancelCommand = new DelegateCommand(this.Cancel_Executed, this.Save_CanExecute);
-			this.addPlayersCommand = new DelegateCommand(this.AddPlayers_Executed, this.AddPlayers_CanExecute);
+			this.addPlayersCommand = new DelegateCommand(this.AddPlayers_Executed);
 			this.editCommand = new DelegateCommand(this.Edit_Executed, this.TournamentSelected);
 
 			// TODO create database
 			Dal.CreateDatabase();
         }
+
+		private bool ShowShedule_CanExecute()
+		{
+			return TournamentSelected() && !IsNewCreated;
+		}
 
 		private bool TournamentSelected()
 		{
@@ -67,7 +72,7 @@
 		private void ShowSchedule()
 		{
 			// TODO navigate to Matches page (not created yet)
-			// NavigationService.Navigate("Matches");				
+			NavigationService.Navigate("Matches", SelectedTournament.Model.TournamentId);				
 		}
 
 		public ICommand EditCommand
@@ -290,12 +295,6 @@
 
 			// navigate to AddPlayers page!
 			NavigationService.Navigate("AddPlayers", SelectedTournament.Id);
-		}
-
-		private bool AddPlayers_CanExecute()
-		{
-			// TODO klopt dit?
-			return true;
 		}
 
 		public override void OnNavigatedTo(NavigationEventArgs navigationEvent)

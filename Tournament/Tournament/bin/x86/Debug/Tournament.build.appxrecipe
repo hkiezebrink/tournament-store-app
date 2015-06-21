@@ -45,14 +45,17 @@
     <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\Views\Matches.xbf">
+      <PackagePath>Views\Matches.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\Themes\Generic.xbf">
       <PackagePath>Themes\Generic.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\Views\AddPlayers.xbf">
       <PackagePath>Views\AddPlayers.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\Views\MainPage.xbf">
-      <PackagePath>Views\MainPage.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\Views\Overview.xbf">
+      <PackagePath>Views\Overview.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Harrie\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

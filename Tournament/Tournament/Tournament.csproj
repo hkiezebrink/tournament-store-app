@@ -123,6 +123,11 @@
     <Compile Include="EnumerationSlider\EnumerationSlider.cs" />
     <Compile Include="EnumerationSlider\StringExtensions.cs" />
     <Compile Include="Helpers\ByteArrayBitmapExtensions.cs" />
+    <Compile Include="Models\Fixture.cs" />
+    <Compile Include="ViewModels\MatchesViewModel.cs" />
+    <Compile Include="Views\Matches.xaml.cs">
+      <DependentUpon>Matches.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Player.cs" />
     <Compile Include="DataAccessLayer\SQLite.cs" />
     <Compile Include="DataAccessLayer\SQLiteAsync.cs" />
@@ -132,8 +137,8 @@
     <Compile Include="Views\AddPlayers.xaml.cs">
       <DependentUpon>AddPlayers.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="Views\Overview.xaml.cs">
+      <DependentUpon>Overview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Tournament.cs" />
     <Compile Include="MVVM\BindableBase.cs" />
@@ -141,7 +146,7 @@
     <Compile Include="MVVM\BooleanToVisibilityConverter.cs" />
     <Compile Include="MVVM\DelegateCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\OverviewViewModel.cs" />
     <Compile Include="ViewModels\Status.cs" />
     <Compile Include="ViewModels\TournamentViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
@@ -152,6 +157,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="packages.config" />
+    <PRIResource Include="Resources.resw" />
     <None Include="Tournament_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +173,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\Matches.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,7 +185,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainPage.xaml">
+    <Page Include="Views\Overview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

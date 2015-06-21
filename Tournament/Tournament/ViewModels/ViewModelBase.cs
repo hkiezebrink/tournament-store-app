@@ -1,4 +1,7 @@
-﻿using Tournament.MVVM;
+﻿using System;
+using Tournament.MVVM;
+using Windows.ApplicationModel.Resources;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Navigation;
 
 namespace Tournament
@@ -9,9 +12,15 @@ namespace Tournament
     /// </summary>
     public class ViewModelBase : BindableBase
     {
-		public virtual void OnNavigatedTo(NavigationEventArgs navigationEvent) { }
+		protected ResourceLoader rl;
+		public ViewModelBase()
+		{
+			rl = new ResourceLoader();
+		}
 
+		public virtual void OnNavigatedTo(NavigationEventArgs navigationEvent) { }
 		public INavigationService NavigationService { get; set; }
+
 		public bool CanGoBack()
 		{
 			if (NavigationService != null)
@@ -23,13 +32,38 @@ namespace Tournament
 				return false;
 			} 
 		}
-		//public virtual bool CanGoForward
-		//{
-		//	get
-		//	{
-		//		if (NavigationService != null) return NavigationService.CanGoForward;
-		//		else return false;
-		//	}
-		//}
+
+		/// <summary>
+		/// Show a MessageDialog with a choice (two buttons)
+		/// When pressed OK run the callback function
+		/// </summary>
+		/// <param name="message">Message of the dialog</param>
+		/// <param name="title">Title of the dialog</param>
+		/// <param name="callbackFunction">The callback function of type Action</param>
+		protected async void Message(string message, string title, Action callbackFunction)
+		{
+			bool result = false;
+
+			MessageDialog dialog = new MessageDialog(message, title);
+			dialog.Commands.Add(new UICommand("OK", new UICommandInvokedHandler((cmd) => result = true)));
+			dialog.Commands.Add(new UICommand("Cancel"));
+			await dialog.ShowAsync();
+
+			if (result)
+			{
+				callbackFunction();
+			}
+		}
+		/// <summary>
+		/// Show a MessageDialog with one button
+		/// </summary>
+		/// <param name="message">Message of the dialog</param>
+		/// <param name="title">Title of the dialog</param>
+		protected async void Message(string message, string title)
+		{
+			MessageDialog dialog = new MessageDialog(message, title);
+			dialog.Commands.Add(new UICommand("OK"));
+			await dialog.ShowAsync();
+		}
 	}
 }

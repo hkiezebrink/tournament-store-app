@@ -1,5 +1,5 @@
 ﻿<local:ViewBase
-    x:Class="Tournament.MainPage"
+    x:Class="Tournament.Overview"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Tournament"
@@ -7,7 +7,7 @@
     xmlns:e="using:Tournament.EnumerationSlider"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" FontFamily="Global User Interface">
 
     <!-- BooleanNegationConverter is used for displaying the tournaments in the gridview.
          BooleanToVisibilityConverter is used for displaying features while in editmode.
@@ -21,7 +21,7 @@
 
     <!-- This Xamlpage communicates all his button commands to MainPageViewModel -->
     <local:ViewBase.DataContext>
-        <local:MainPageViewModel />
+        <local:OverviewViewModel />
     </local:ViewBase.DataContext>
 
     <!-- Defining the application design, the textboxes and buttons. And the binding of the textboxes and buttons.
@@ -225,6 +225,5 @@
                 </Grid>
             </Border>
         </Grid>
-        <TextBlock Text="{Binding IsNewCreated}" HorizontalAlignment="Left" Margin="602,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </local:ViewBase>
