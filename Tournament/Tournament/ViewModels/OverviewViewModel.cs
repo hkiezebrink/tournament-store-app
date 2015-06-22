@@ -16,28 +16,32 @@
     /// It uses ICommands to perform actions.
     /// </summary>
     public class OverviewViewModel : ViewModelBase
-    {
-        // Declare delegate commands.
+	{
+		#region Fields
+		// Declare delegate commands (Command linked from within the XAML view)
         private DelegateCommand cancelCommand;
         private DelegateCommand createCommand;
         private DelegateCommand deleteCommand;
-        private bool hasSelection = false;
-        private DelegateCommand newCommand;
-        private ObservableCollection<TournamentViewModel> tournaments = new ObservableCollection<TournamentViewModel>();
-        private DelegateCommand saveCommand;
-        private DelegateCommand showScheduleCommand;
-
+		private DelegateCommand saveCommand;
+		private DelegateCommand showScheduleCommand;
 		private DelegateCommand addPlayersCommand;
-
-        private TournamentViewModel selectedTournament = null;
-        private bool isDatabaseCreated = false;
-
-		private bool isNewCreated = false;
-
+		private DelegateCommand newCommand;
 		private DelegateCommand editCommand;
+
+		// View state booleans
+        private bool hasSelection = false;
+		private bool isDatabaseCreated = false;
+		private bool isNewCreated = false;
 		private bool isInEditMode = false;
 
+		// Tournament collections and selectedTournament
+        private ObservableCollection<TournamentViewModel> tournaments = new ObservableCollection<TournamentViewModel>();
+        private TournamentViewModel selectedTournament = null;
+		#endregion
 
+		/// <summary>
+		/// OverviewModel constructor
+		/// </summary>
         public OverviewViewModel()
         {
             if (this.IsInDesignMode)
@@ -55,53 +59,18 @@
 			this.addPlayersCommand = new DelegateCommand(this.AddPlayers_Executed);
 			this.editCommand = new DelegateCommand(this.Edit_Executed, this.TournamentSelected);
 
-			// TODO create database
+			// Create database
 			Dal.CreateDatabase();
         }
 
-		private bool ShowShedule_CanExecute()
-		{
-			return TournamentSelected() && !IsNewCreated;
-		}
-
-		private bool TournamentSelected()
-		{
-			return selectedTournament != null;
-		}
-
-		private void ShowSchedule()
-		{
-			// TODO navigate to Matches page (not created yet)
-			NavigationService.Navigate("Matches", SelectedTournament);				
-		}
+		// All the commands getters 
+		#region Commands getters
 
 		public ICommand EditCommand
 		{
 			get { return this.editCommand; }
 		}
 
-		public bool IsInDesignMode
-		{
-			get { return Windows.ApplicationModel.DesignMode.DesignModeEnabled; }
-		}
-
-		public bool IsInEditMode
-		{
-			get
-			{
-				return this.isInEditMode;
-			}
-
-			set
-			{
-				this.SetProperty(ref this.isInEditMode, value);
-				this.editCommand.RaiseCanExecuteChanged();
-			}
-		}
-
-		
-
-		#region Commands
 		public ICommand ShowScheduleCommand
 		{
 			get { return this.showScheduleCommand; }
@@ -139,12 +108,9 @@
 
 		
 		#endregion
-		/// <summary>
-        /// The following commands are bindings to the buttons in mainpage.xaml.
-        /// </summary>
 
-
-        
+		// All the states and can execute methods (all return true/false)
+		#region Command States
 
 		public bool IsNewCreated
 		{
@@ -152,136 +118,155 @@
 			private set { this.SetProperty(ref this.isNewCreated, value); }
 		}
 
-        public bool HasSelection
-        {
-            get { return this.hasSelection; }
-            private set { this.SetProperty(ref this.hasSelection, value); }
-        }
+		// item selected
+		public bool HasSelection
+		{
+			get { return this.hasSelection; }
+			private set { this.SetProperty(ref this.hasSelection, value); }
+		}
 
-        
-
-        public ObservableCollection<TournamentViewModel> Tournaments
-        {
-            get { return this.tournaments; }
-            set { this.SetProperty(ref this.tournaments, value); }
-        }
-
-        
-        public TournamentViewModel SelectedTournament
-        {
-            get { return this.selectedTournament; }
-            set
-            {
-                this.SetProperty(ref this.selectedTournament, value);
-                this.HasSelection = this.selectedTournament != null;
-                this.deleteCommand.RaiseCanExecuteChanged();
-				this.editCommand.RaiseCanExecuteChanged();
-				this.showScheduleCommand.RaiseCanExecuteChanged();
-            }
-        }
-
-        // True if a tournament is selected.
-        protected bool Edit_CanExecute()
-        {
+		// True if a tournament is selected.
+		protected bool Edit_CanExecute()
+		{
 			return this.selectedTournament != null;
-        }
+		}
 
-        // Editmode is true. And designmode is false.
-        protected void Edit_Executed()
-        {
-			this.IsInEditMode = true; ;
-            this.saveCommand.RaiseCanExecuteChanged();
-            this.cancelCommand.RaiseCanExecuteChanged();
-        }
+		// True while in editmode and if a db exists.
+		private bool New_CanExecute()
+		{
+			return !this.IsInEditMode && this.isDatabaseCreated;
+		}
 
-        // Cancel the changes made to the selected tournament.
-        private void Cancel_Executed()
-        {
-            if (this.selectedTournament.Id == 0)
-            {
-                this.tournaments.Remove(this.selectedTournament);
-            }
-            else
-            {
-                // Get old one back from db.
-                this.selectedTournament.Model = Dal.GetTournamentById(this.selectedTournament.Id);
-            }
-
-            this.IsInEditMode = false;
-			this.IsNewCreated = false;
-        }
-
-        // This method is not used. The db is now created when the select button is pressed.
-        private void Create_Executed()
-        {
-            // Create a db.
-            Dal.CreateDatabase();
-
-            // Select. Otherwise the displayed list may be out of sync with the db.
-			Select_Executed();
-        }
-
-        // Delete a tournament from the db.
-        private void Delete_Executed()
-        {
-            // Remove from db.
-            Dal.DeleteTournament(this.selectedTournament.Model);
-
-            // Remove from list.
-            this.Tournaments.Remove(this.selectedTournament);
-        }
-
-        // True while in editmode and if a db exists.
-        private bool New_CanExecute()
-        {
-            return !this.IsInEditMode && this.isDatabaseCreated;
-        }
-
-        // New empty tournament is created. And is then displayed as the selected tournament.
-        private void New_Executed()
-        {
-            this.tournaments.Add(new TournamentViewModel(new Tournament()));
-            this.SelectedTournament = this.tournaments.Last();
-			this.IsNewCreated = true;
-            this.editCommand.Execute(null);
-        }
-
-        // True while in editmode. For saving a tournament.
-        private bool Save_CanExecute()
-        {
+		// True while in editmode. For saving a tournament.
+		private bool Save_CanExecute()
+		{
 			return this.IsInEditMode;
-        }
+		}
 
-        // Save the selected tournament in the db. Binding is with the save button in mainpage.xaml.
-        private void Save_Executed()
-        {
-            // Store new one in db.
-            Dal.SaveTournament(this.selectedTournament.Model);
+		public bool IsInDesignMode
+		{
+			get { return Windows.ApplicationModel.DesignMode.DesignModeEnabled; }
+		}
 
-            this.selectedTournament.Model = this.selectedTournament.Model;
+		public bool IsInEditMode
+		{
+			get
+			{
+				return this.isInEditMode;
+			}
 
-            // Leave edit mode.
-            this.IsInEditMode = false;
+			set
+			{
+				this.SetProperty(ref this.isInEditMode, value);
+				this.editCommand.RaiseCanExecuteChanged();
+			}
+		}
+
+		private bool ShowShedule_CanExecute()
+		{
+			return TournamentSelected() && !IsNewCreated;
+		}
+
+		private bool TournamentSelected()
+		{
+			return selectedTournament != null;
+		}
+
+		#endregion
+
+		// All the methods
+		#region Methods
+
+		// Navigate to Matches view and send TournamentViewModel
+		private void ShowSchedule()
+		{
+			NavigationService.Navigate("Matches", SelectedTournament);
+		}
+
+		// Editmode is true. And designmode is false.
+		protected void Edit_Executed()
+		{
+			this.IsInEditMode = true; ;
+			this.saveCommand.RaiseCanExecuteChanged();
+			this.cancelCommand.RaiseCanExecuteChanged();
+		}
+
+		// Cancel the changes made to the selected tournament.
+		private void Cancel_Executed()
+		{
+			if (this.selectedTournament.Id == 0)
+			{
+				this.tournaments.Remove(this.selectedTournament);
+			}
+			else
+			{
+				// Get old one back from db.
+				this.selectedTournament.Model = Dal.GetTournamentById(this.selectedTournament.Id);
+			}
+
+			this.IsInEditMode = false;
 			this.IsNewCreated = false;
-        }
+		}
 
-        // Select all tournaments from the db. Binding is with the select button in mainpage.xaml.
-        private void Select_Executed()
-        {
-            // Also create a new db. Because the new button in mainpage.xaml is not used.
-            // Dal.CreateDatabase();
+		// This method is not used. The db is now created when the select button is pressed.
+		private void Create_Executed()
+		{
+			// Create a db.
+			Dal.CreateDatabase();
 
-            List<Tournament> models = Dal.GetAllTournaments();
+			// Select. Otherwise the displayed list may be out of sync with the db.
+			Select_Executed();
+		}
 
-            this.tournaments.Clear();
-            foreach (var m in models)
-            {
-                this.tournaments.Add(new TournamentViewModel(m));
-            }
+		// Delete a tournament from the db.
+		private void Delete_Executed()
+		{
+			// Remove from db.
+			Dal.DeleteTournament(this.selectedTournament.Model);
 
-            this.isDatabaseCreated = true;
-            this.newCommand.RaiseCanExecuteChanged();
-        }
+			// Remove from list.
+			this.Tournaments.Remove(this.selectedTournament);
+		}
+
+		// New empty tournament is created. And is then displayed as the selected tournament.
+		private void New_Executed()
+		{
+			this.tournaments.Add(new TournamentViewModel(new Tournament()));
+			this.SelectedTournament = this.tournaments.Last();
+			this.IsNewCreated = true;
+			this.editCommand.Execute(null);
+		}
+
+		// Save the selected tournament in the db. Binding is with the save button in mainpage.xaml.
+		private void Save_Executed()
+		{
+			// Store new one in db.
+			Dal.SaveTournament(this.selectedTournament.Model);
+
+			this.selectedTournament.Model = this.selectedTournament.Model;
+
+			// Leave edit mode.
+			this.IsInEditMode = false;
+			this.IsNewCreated = false;
+		}
+
+		// Select all tournaments from the db. Binding is with the select button in mainpage.xaml.
+		private void Select_Executed()
+		{
+			// Also create a new db. Because the new button in mainpage.xaml is not used.
+			// Dal.CreateDatabase();
+
+			List<Tournament> models = Dal.GetAllTournaments();
+
+			this.tournaments.Clear();
+			foreach (var m in models)
+			{
+				this.tournaments.Add(new TournamentViewModel(m));
+			}
+
+			this.isDatabaseCreated = true;
+			this.newCommand.RaiseCanExecuteChanged();
+		}
 
 		/// <summary>
 		/// Move to AddPlayer view
@@ -297,8 +282,40 @@
 			NavigationService.Navigate("AddPlayers", SelectedTournament);
 		}
 
+		#endregion
+
+		// Data access for the View
+		#region ViewModel Data properties
+		public ObservableCollection<TournamentViewModel> Tournaments
+        {
+            get { return this.tournaments; }
+            set { this.SetProperty(ref this.tournaments, value); }
+        }
+
+        public TournamentViewModel SelectedTournament
+        {
+            get { return this.selectedTournament; }
+            set
+            {
+                this.SetProperty(ref this.selectedTournament, value);
+                this.HasSelection = this.selectedTournament != null;
+				// change execute state of the following commands
+                this.deleteCommand.RaiseCanExecuteChanged();
+				this.editCommand.RaiseCanExecuteChanged();
+				this.showScheduleCommand.RaiseCanExecuteChanged();
+            }
+        }
+		#endregion
+
+
+		/// <summary>
+		/// Override the OnNavigatedTo from the ViewModelBase
+		/// Execute function to load the Tournaments
+		/// </summary>
+		/// <param name="navigationEvent"></param>
 		public override void OnNavigatedTo(NavigationEventArgs navigationEvent)
 		{
+			// get tournaments
 			Select_Executed();
 		}
     }

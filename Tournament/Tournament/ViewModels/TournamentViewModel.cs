@@ -11,8 +11,7 @@
 	using System.Collections.ObjectModel;
 
     /// <summary>
-    /// This class is used for binding the user input in the mainpage.xaml. When binding is TwoWay both the
-    /// getter and setter are used. Else only the getter is used.
+    /// This class is used to hold a Tournament with all it properties
     /// </summary>
     public class TournamentViewModel : ViewModelBase
     {
@@ -29,14 +28,14 @@
         #endregion
 
         #region Constructor
-        /// <summary>
-        /// Class constructor.
-        /// </summary>
+		/// <summary>
+		/// Class constructor
+		/// </summary>
+		/// <param name="model">Instance of Tournament</param>
         public TournamentViewModel(Tournament model)
         {
             this.model = model;
             this.uploadImageCommand = new DelegateCommand(this.UploadImage_Executed);
-
 
 			_playersFixtures = new ObservableCollection<PlayersFixture>();
 			_fixtures = new ObservableCollection<Fixture>();
@@ -120,9 +119,9 @@
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+		/// <summary>
+		/// Tournament Model of a
+		/// </summary>
         public Tournament Model
         {
             get

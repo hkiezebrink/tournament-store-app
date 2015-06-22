@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Tournament
 {
+	/// <summary>
+	/// NavigationService Interface
+	/// Code from: online pluralsight video tutorial
+	/// </summary>
 	public interface INavigationService
 	{
 		void GoHome();

@@ -11,7 +11,7 @@
         <local:AddPlayerViewModel />
     </local:ViewBase.DataContext>
 
-    <Grid Background="Chocolate">
+    <Grid Background="DodgerBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="140" />
             <RowDefinition Height="*" />
@@ -33,10 +33,10 @@
         </Grid> -->
         <Grid Grid.Row="1">
             <Button TabIndex="1" Command="{Binding InsertPlayerCommand}" Content="Insert Player" HorizontalAlignment="Left" Margin="463,185,0,0" VerticalAlignment="Top" />
-            <Button TabIndex="1" Command="{Binding GenerateScheduleCommand}" Content="Generate Schedule" HorizontalAlignment="Left" Margin="1183,185,0,0" VerticalAlignment="Top" />
+            <Button TabIndex="1" Command="{Binding GenerateScheduleCommand}" Content="Generate Schedule" HorizontalAlignment="Left" Margin="1142,185,0,0" VerticalAlignment="Top" />
             <ListView ItemsSource="{Binding Tournament.Players}" 
                       HorizontalAlignment="Left" 
-                      Height="590" Margin="887,79,0,0" 
+                      Height="590" Margin="791,81,0,-43" 
                       BorderBrush="Azure" 
                       BorderThickness="2" 
                       VerticalAlignment="Top" 

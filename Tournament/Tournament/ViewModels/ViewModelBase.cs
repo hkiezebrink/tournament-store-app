@@ -7,20 +7,27 @@ using Windows.UI.Xaml.Navigation;
 namespace Tournament
 {
     /// <summary>
-    /// The base model for each model. It uses the BindableBase for easy binding to the View and the use of PropertyChanged events.
+    /// The base model for each Viewmodel. It uses the BindableBase for easy binding to the View and the use of PropertyChanged events.
 	/// This ViewModelBase uses the NavigationService which activates navigation in every ViewModel
     /// </summary>
     public class ViewModelBase : BindableBase
     {
+		// ResourceLoader for loading strings form te Resourse file
 		protected ResourceLoader rl;
 		public ViewModelBase()
 		{
 			rl = new ResourceLoader();
 		}
 
+		// This OnNavigatedTo Method needs to be implemented in the ViewModel
 		public virtual void OnNavigatedTo(NavigationEventArgs navigationEvent) { }
+		// NavigationService that can be used inside the ViewModel
 		public INavigationService NavigationService { get; set; }
 
+		/// <summary>
+		/// Data Property to determine if the page should show the back button
+		/// </summary>
+		/// <returns></returns>
 		public bool CanGoBack()
 		{
 			if (NavigationService != null)

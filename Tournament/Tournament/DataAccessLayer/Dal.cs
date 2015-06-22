@@ -251,14 +251,18 @@
 					Player p1 = (from p in db.Table<Player>() where p.PlayerId == item.PlayerOne select p).FirstOrDefault();
 					Player p2 = (from p in db.Table<Player>() where p.PlayerId == item.PlayerTwo select p).FirstOrDefault();
 
-					// assign them to PlayersFixture
-					_playersFixture.Add(new PlayersFixture
+					if (p1 != null & p2 != null)
 					{
-						MatchId = item.MatchId,
-						PlayerOne = p1,
-						PlayerTwo = p2,
-						Round = item.Round
-					});	
+						// assign them to PlayersFixture
+						_playersFixture.Add(new PlayersFixture
+						{
+							MatchId = item.MatchId,
+							PlayerOne = p1,
+							PlayerTwo = p2,
+							Round = item.Round
+						});		
+					}
+					
 				}
 			}
 			return _playersFixture;

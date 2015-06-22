@@ -15,21 +15,33 @@ namespace Tournament
 {
 	public class MatchesViewModel : ViewModelBase
 	{
+		#region Fields
 		private int _tournamentId;
 		private TournamentViewModel _selectedTournament;
+		// Grouped matches based on round property
 		private IEnumerable<IGrouping<int, PlayersFixture>> _fixtures;
+		#endregion
 
+		/// <summary>
+		/// Create a MatchesViewModel object corresponding the Matches View
+		/// </summary>
 		public MatchesViewModel()
 		{
+			// set the command
+			// GoBack is the function to execute when CanGoBack returns true
 			GoBackCommand = new DelegateCommand(GoBack, CanGoBack);
 		}
 
+		// Command and execute function
+		#region Command
+		public ICommand GoBackCommand { get; private set; }
+
+		// Command execute function
 		private void GoBack()
 		{
 			NavigationService.GoHome();
-		}
-		
-		public ICommand GoBackCommand { get; private set; }
+		}	
+		#endregion	
 
 		/// <summary>
 		/// Tournament type of TournamentViewModel
@@ -44,7 +56,7 @@ namespace Tournament
 		}
 
 		/// <summary>
-		/// Bind Matches to View
+		/// Bind Grouped PlayersFixture to the View
 		/// </summary>
 		public IEnumerable<IGrouping<int, PlayersFixture>> Fixtures
 		{

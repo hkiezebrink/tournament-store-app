@@ -56,12 +56,12 @@
                                                 Path=DataContext.Tournament.ImageSource}" Stretch="UniformToFill" AutomationProperties.Name="{Binding MatchId}"/> -->
                         </Border>
                         <StackPanel VerticalAlignment="Bottom" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
-                            <TextBlock Text="{Binding MatchId}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" FontSize="18" Height="40" Margin="15,10,10,0" FontWeight="SemiBold" FontFamily="Global User Interface"/>
-                            <StackPanel Orientation="Horizontal" Margin="15,0,10,10">
+                            <!-- <TextBlock Text="{Binding MatchId}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" FontSize="18" Height="40" Margin="15,10,10,0" FontWeight="SemiBold" FontFamily="Global User Interface"/> -->
+                            <StackPanel Orientation="Horizontal" Margin="15,20,10,10">
                                 <TextBlock Text="PlayerOne:" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Width="auto" Margin="0, 0, 20, 0" FontFamily="Global User Interface"></TextBlock>
                                 <TextBlock Text="{Binding PlayerOne.Name}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" TextWrapping="NoWrap" FontSize="14" FontFamily="Global User Interface"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="15,0,10,10">
+                            <StackPanel Orientation="Horizontal" Margin="15,0,10,20">
                                 <TextBlock Text="PlayerTwo:" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Width="auto" Margin="0, 0, 20, 0" FontFamily="Global User Interface"></TextBlock>
                                 <TextBlock Text="{Binding PlayerTwo.Name}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" TextWrapping="NoWrap" FontSize="14" FontFamily="Global User Interface" />
                             </StackPanel>

@@ -70,6 +70,8 @@ namespace Tournament
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
+			// Set the frame on the NavigationService
+			// so that it works when called from the ViewModel
 			NavigationService.Frame = rootFrame;
 
             if (rootFrame.Content == null)

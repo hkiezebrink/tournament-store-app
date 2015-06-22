@@ -13,13 +13,11 @@ namespace Tournament.Models
 	public class PlayersFixture
 	{
 		public int MatchId { get; set; }
-
-		public Player PlayerOne { get; set; }
+		// Combine Fixture with player objects
+		public Player PlayerOne { get; set; }	
 		public Player PlayerTwo { get; set; }
-
 		public int ScoreOne { get; set; }
 		public int ScoreTwo { get; set; }
-
 		public int Round { get; set; }
 
 	}

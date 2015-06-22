@@ -20,10 +20,13 @@ namespace Tournament
 {
 	class AddPlayerViewModel : ViewModelBase
 	{
-		private string _playerName;
+		#region Fields
+		private string _playerName; // the name of the new player textBox
+		private int _tournamentId; // shortcut for _selectedTournament.Model.TournamentId
+
 		private TournamentViewModel _selectedTournament;
-		private ObservableCollection<Player> _players;
-		private int _tournamentId;
+		private ObservableCollection<Player> _players;	// temp list to hold the new players in the view
+		#endregion
 
 		/// <summary>
 		/// AddPlayerViewModel constructor
@@ -40,7 +43,7 @@ namespace Tournament
 		#region Data Properties
 
 		/// <summary>
-		/// Players property with the players of one tournament
+		/// Players property with temp players that will be added in the view
 		/// </summary>
 		public ObservableCollection<Player> Players
 		{
@@ -58,6 +61,7 @@ namespace Tournament
 				this.SetProperty(ref this._selectedTournament, value);
 			}
 		}
+
 		/// <summary>
 		/// PlayerName property for new players
 		/// set: only set when modified and run change event
@@ -72,13 +76,14 @@ namespace Tournament
 				if (_playerName != value)
 				{
 					_playerName = value;
-					OnPropertyChanged();
+					OnPropertyChanged(); // pass event so the view binding in the View will update
 				}
 			}
 		}
 		
 		#endregion
 
+		// Commands
 		#region Action Commands
 
 		public ICommand InsertPlayerCommand { get; private set; }
@@ -87,6 +92,7 @@ namespace Tournament
 
 		#endregion
 
+		// Can execute command functions (return boolean)
 		#region Action States
 
 		private bool CanGenerateSchedule()
@@ -96,20 +102,24 @@ namespace Tournament
 
 		#endregion
 
+		// Methods when a command execute
 		#region Action Methods
 
 		private void AskGoBack()
 		{
+			// Show messageDialog function from ViewModelBase
 			Message(rl.GetString("LeaveAddPlayers"), rl.GetString("LeaveAddPlayersTitle"), GoBack);
 		}
 
 		private void GoBack()
 		{
+			// use NavigationService to go back
 			NavigationService.GoBack();
 		}
 
 		public void ExecuteMe()
 		{
+			// use NavigationService to go home
 			NavigationService.GoHome();
 		}
 
@@ -124,34 +134,32 @@ namespace Tournament
 
 			// Save player objects in the database
 			Dal.InsertPlayers(Tournament.Players, _tournamentId);
+			// Create schedule
 			CreateFixtures();
+			// Navigate to Matches and send the TournamentViewModel as parameter
 			NavigationService.Navigate("Matches", Tournament);
-			// TODO Generate schedule
-			/* Maak een tijdelijk lijst met Player objecten
-			 * en zodra het aantal van deze lijst groter is dan 1
-			 * voeg dan alle objecten toe in de database en genereer alle wedstrijden
-			 * voeg de wedstrijden toe aan de Match model
-			 * 
-			 * Navigeer nu naar de matches pagina en stuur de tournamentId mee
-			 */
 		}
 
 		public void InsertPlayer()
 		{
+			// check for whitespace or null
 			if (String.IsNullOrWhiteSpace(PlayerName) || PlayerName.Length > 36)
 			{
 				return;
 			}
+			// create new player and add to the TournamentViewModel
 			Player player = new Player { Name = this.PlayerName.Trim() };
-
 			Tournament.Players.Add(player);
 
+			// Empty the playerName and update the view
 			PlayerName = String.Empty;
-			OnPropertyChanged("Players");
+			//OnPropertyChanged("Players");
 		}
 		
 		#endregion
 
+
+		#region Create the schedule method
 		/// <summary>
 		/// Create new matches for each round 
 		/// </summary>
@@ -248,12 +256,10 @@ namespace Tournament
 				}
 			}
 
-			
-
-			//TODO Add Matches to Dal
+			// insert fixtures in database
 			Dal.InsertFixtures(fixtures, _tournamentId);
-			// TODO create PlayersFixture object and assign to SelectedTournament 
 		}
+		#endregion
 
 		/// <summary>
 		/// OnNavigatedTo runs when this ViewModel is placed in the Frame object

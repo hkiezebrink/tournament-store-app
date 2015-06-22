@@ -26,7 +26,7 @@
 
     <!-- Defining the application design, the textboxes and buttons. And the binding of the textboxes and buttons.
     Buttons are bind to the MainPageViewModel. Textboxes are bind to the TournamentViewModel. -->
-    <Grid Background="Chocolate">
+    <Grid Background="DodgerBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />

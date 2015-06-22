@@ -7,6 +7,11 @@ using Windows.UI.Xaml.Controls;
 
 namespace Tournament
 {
+	/// <summary>
+	/// NavigationService to use Navigation methods in the ViewModel 
+	/// instead of the code-behind of the XAML
+	/// Code from: online pluralsight video tutorial
+	/// </summary>
 	public class NavigationService : INavigationService
 	{
 		private static NavigationService _Instance;

@@ -14,12 +14,10 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Grouped Items Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234231
-
 namespace Tournament
 {
 	/// <summary>
-	/// A page that displays a grouped collection of items.
+	/// Matches. The logic should be in the corresponding ViewModel (MVVM pattern)
 	/// </summary>
 	public sealed partial class Matches : ViewBase
 	{
