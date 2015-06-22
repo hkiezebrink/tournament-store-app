@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>NATHAN-PC</Machine>
+    <WindowsUser>NATHAN</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Release|x86</SolutionConfiguration>
+    <PackageArchitecture>x86</PackageArchitecture>
+    <PackageIdentityName>97738aae-fd72-402f-8fc6-a76da7b7bc44</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\obj\x86\Release\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>F098DAE9040D1364B20B456F898F0C64CCCE3C73FAC7067C3C532F33760C8AFF</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>97738aae-fd72-402f-8fc6-a76da7b7bc44_1.0.0.0_x86__5a9pcwvvxtfc2</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>97738aae-fd72-402f-8fc6-a76da7b7bc44_5a9pcwvvxtfc2!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>97738aae-fd72-402f-8fc6-a76da7b7bc44</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=NATHAN</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Release\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-22T07:53:05.796</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Release\Tournament.exe">
+      <PackagePath>Tournament.exe</PackagePath>
+      <Modified>2015-06-22T08:52:00.558</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLite.WinRT81\3.8.10.2\Redist\Retail\x86\sqlite3.dll">
+      <PackagePath>sqlite3.dll</PackagePath>
+      <Modified>2015-05-27T06:52:38.081</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <Modified>2013-07-23T13:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\Assets\tournament_splash.png">
+      <PackagePath>Assets\tournament_splash.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-16T08:29:23.106</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\Assets\tournament_30.png">
+      <PackagePath>Assets\tournament_30.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-16T08:31:44.592</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\Assets\tournament_store.png">
+      <PackagePath>Assets\tournament_store.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-16T08:36:45.021</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Release\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-06-22T07:53:04.921</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Release\Views\Matches.xbf">
+      <PackagePath>Views\Matches.xbf</PackagePath>
+      <Modified>2015-06-22T08:52:00.141</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Release\Themes\Generic.xbf">
+      <PackagePath>Themes\Generic.xbf</PackagePath>
+      <Modified>2015-06-22T07:53:04.936</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Release\Views\AddPlayers.xbf">
+      <PackagePath>Views\AddPlayers.xbf</PackagePath>
+      <Modified>2015-06-22T08:52:00.144</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Release\Views\Overview.xbf">
+      <PackagePath>Views\Overview.xbf</PackagePath>
+      <Modified>2015-06-22T07:53:04.936</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Release\Tournament.xr.xml">
+      <PackagePath>Tournament.xr.xml</PackagePath>
+      <Modified>2015-06-22T08:52:00.077</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NATHAN\Documents\GitHub\tournament-store-app\Tournament\Tournament\bin\x86\Release\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-06-22T08:05:47.400</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\">
+      <Name>Microsoft.VCLibs.120.00</Name>
+      <Version>12.0.21005.1</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.120.00, MinVersion = 12.0.21005.1</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\.\AppX\Retail\ARM\Microsoft.VCLibs.ARM.12.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\">
+      <Name>Microsoft.VCLibs.120.00</Name>
+      <Version>12.0.21005.1</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.120.00, MinVersion = 12.0.21005.1</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\.\AppX\Retail\x64\Microsoft.VCLibs.x64.12.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\">
+      <Name>Microsoft.VCLibs.120.00</Name>
+      <Version>12.0.21005.1</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.120.00, MinVersion = 12.0.21005.1</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\.\AppX\Retail\x86\Microsoft.VCLibs.x86.12.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

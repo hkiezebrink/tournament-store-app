@@ -25,8 +25,19 @@ namespace Tournament.Models
 		/// </summary>
 		public int PlayerTwo { get; set; }
 
+        /// <summary>
+        /// Gets or sets ScoreOne
+        /// </summary>
 		public int ScoreOne { get; set; }
+
+        /// <summary>
+        /// Gets or sets ScoreTwo
+        /// </summary>
 		public int ScoreTwo { get; set; }
+
+        /// <summary>
+        /// Gets or sets Round
+        /// </summary>
 		[NotNull]
 		public int Round { get; set; }
 
