@@ -11,12 +11,20 @@
         <local:MatchesViewModel />
     </local:ViewBase.DataContext>
 
+    <!-- bind grouped Fixures data -->
+    <local:ViewBase.Resources>
+        <CollectionViewSource
+            x:Name="groupedItemsViewSource"
+            Source="{Binding Fixtures}"
+            IsSourceGrouped="true"
+            />
+    </local:ViewBase.Resources>
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid x:Name="ImageContainer">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
@@ -26,28 +34,29 @@
             <RowDefinition Height="140"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <!-- Horizontal scrolling grid 
-        ItemsSource="{Binding Source={StaticResource groupedItemsViewSource}}"
-        -->
+
+        <Grid.Background>
+            <ImageBrush ImageSource="{Binding Tournament.ImageSource}"
+                    Stretch="UniformToFill" ></ImageBrush>
+        </Grid.Background>
         <GridView
             x:Name="itemGridView"
             AutomationProperties.AutomationId="ItemGridView"
             AutomationProperties.Name="Grouped Items"
             Grid.RowSpan="2"
             Padding="116,137,40,46"
-            ItemsSource="{Binding Tournament.PlayersFixtures}"
+            ItemsSource="{Binding Source={StaticResource groupedItemsViewSource}}"
             SelectionMode="None"
             IsSwipeEnabled="false">
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid HorizontalAlignment="Left" Width="250" Height="250">
-                        <!--
                         <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
-                            <Image Source="{Binding Path=DataContext.Tournament.ImageSource, RelativeSource={RelativeSource FindAncestor, AncestorType={}}}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
+                            <!--<Image Source="{Binding ElementName=itemGridView,
+                                                Path=DataContext.Tournament.ImageSource}" Stretch="UniformToFill" AutomationProperties.Name="{Binding MatchId}"/> -->
                         </Border>
-                        -->
                         <StackPanel VerticalAlignment="Bottom" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
-                            <TextBlock Text="{Binding MatchId}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" FontSize="18" Height="40" Margin="15,10,10,0" FontWeight="SemiBold"/>
+                            <TextBlock Text="{Binding MatchId}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" FontSize="18" Height="40" Margin="15,10,10,0" FontWeight="SemiBold" FontFamily="Global User Interface"/>
                             <StackPanel Orientation="Horizontal" Margin="15,0,10,10">
                                 <TextBlock Text="PlayerOne:" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Width="auto" Margin="0, 0, 20, 0" FontFamily="Global User Interface"></TextBlock>
                                 <TextBlock Text="{Binding PlayerOne.Name}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" TextWrapping="NoWrap" FontSize="14" FontFamily="Global User Interface"/>
@@ -74,8 +83,10 @@
                                     AutomationProperties.Name="Group Title"
                                     Style="{StaticResource TextBlockButtonStyle}" >
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Title}" Margin="0,-11,10,10" Style="{StaticResource SubheaderTextBlockStyle}" TextWrapping="NoWrap" />
-                                        <TextBlock Text="Icoontje" FontFamily="Global User Interface" Margin="0,-11,0,10" Style="{StaticResource SubheaderTextBlockStyle}" TextWrapping="NoWrap" />
+                                        <TextBlock Margin="0,-11,10,10" Style="{StaticResource SubheaderTextBlockStyle}" TextWrapping="NoWrap" FontFamily="Global User Interface">
+                                            <Run Text="Round: "/>
+                                            <Run Text="{Binding Key}" FontFamily="Global User Interface"/>
+                                        </TextBlock>
                                     </StackPanel>
                                 </Button>
                             </Grid>

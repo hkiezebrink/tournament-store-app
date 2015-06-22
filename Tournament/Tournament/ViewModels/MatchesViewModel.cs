@@ -17,11 +17,10 @@ namespace Tournament
 	{
 		private int _tournamentId;
 		private TournamentViewModel _selectedTournament;
-		private ObservableCollection<Fixture> _fixtures;
+		private IEnumerable<IGrouping<int, PlayersFixture>> _fixtures;
 
 		public MatchesViewModel()
 		{
-			_fixtures = new ObservableCollection<Fixture>();
 			GoBackCommand = new DelegateCommand(GoBack, CanGoBack);
 		}
 
@@ -47,7 +46,7 @@ namespace Tournament
 		/// <summary>
 		/// Bind Matches to View
 		/// </summary>
-		public ObservableCollection<Fixture> Fixtures
+		public IEnumerable<IGrouping<int, PlayersFixture>> Fixtures
 		{
 			get { return this._fixtures; }
 			set { this.SetProperty(ref this._fixtures, value); }
@@ -66,7 +65,8 @@ namespace Tournament
 				_tournamentId = Tournament.Model.TournamentId;
 
 				Tournament.PlayersFixtures = Dal.GetPlayersFixture(_tournamentId);
-
+				// Group PlayerFixtures for the view
+				Fixtures = (from f in Tournament.PlayersFixtures group f by f.Round into grp orderby grp.Key select grp);
 			}
 			else
 			{
