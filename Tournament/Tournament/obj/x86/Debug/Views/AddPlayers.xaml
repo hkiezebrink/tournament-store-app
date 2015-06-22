@@ -11,7 +11,7 @@
         <local:AddPlayerViewModel />
     </local:ViewBase.DataContext>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="Chocolate">
         <Grid.RowDefinitions>
             <RowDefinition Height="140" />
             <RowDefinition Height="*" />
@@ -45,7 +45,7 @@
                     <DataTemplate>
                         <StackPanel Orientation="Vertical" Margin="10">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Naam:" Margin="0,0,10,0" />
+                                <TextBlock Text="Name:" Margin="0,0,10,0" />
                                 <TextBlock Text="{Binding Name}" />
                             </StackPanel>
                         </StackPanel>
