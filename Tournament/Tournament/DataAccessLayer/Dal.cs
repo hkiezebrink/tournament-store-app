@@ -16,16 +16,13 @@
     /// </summary>
     public class Dal
     {
-        private static string dbPath = string.Empty;
-
-		private static ObservableCollection<Player> _players;
-
 		static Dal()
 		{
 			_players = new ObservableCollection<Player>();
 		}
 
-        // Variable for the sqlite database
+        #region Fields
+        // Fields for the sqlite database
         private static string DbPath
         {
             get
@@ -39,7 +36,11 @@
                 return dbPath;
             }
         }
+        private static string dbPath = string.Empty;
+        private static ObservableCollection<Player> _players;
+        #endregion
 
+        #region Tournament Methods
         // Method to create a Tournament table
         public static void CreateDatabase()
         {
@@ -52,13 +53,12 @@
                 // Create the table if it does not exist
                 //var c = db.CreateTable<Tournament>();
 
-				db.CreateTable<Tournament>();
-				db.CreateTable<Player>();
-				db.CreateTable<Fixture>();
+                db.CreateTable<Tournament>();
+                db.CreateTable<Player>();
+                db.CreateTable<Fixture>();
             }
         }
 
-		#region Tournament Methods
 		// Method to delete a tournament
         public static void DeleteTournament(Tournament tournament)
         {
@@ -265,7 +265,5 @@
 		}
 
 		#endregion
-
-		
 	}
 }

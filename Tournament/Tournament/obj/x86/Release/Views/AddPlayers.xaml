@@ -11,7 +11,7 @@
         <local:AddPlayerViewModel />
     </local:ViewBase.DataContext>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="Chocolate">
         <Grid.RowDefinitions>
             <RowDefinition Height="140" />
             <RowDefinition Height="*" />
