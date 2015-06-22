@@ -118,17 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GenerateScheduleError" xml:space="preserve">
-    <value>Om een speelschema te maken moeten er ten minste twee spelers zijn ingevoerd.</value>
+    <value>To create a match, at least two players must be submitted.</value>
   </data>
   <data name="GenerateScheduleErrorTitle" xml:space="preserve">
-    <value>Je bent er bijna..</value>
+    <value>Your almost there.</value>
   </data>
   <data name="LeaveAddPlayers" xml:space="preserve">
-    <value>De ingevoerde spelers worden niet opgeslagen en er wordt geen speelschema aangemaakt. 
-
-Druk op OK om toch terug te gaan.</value>
+    <value>The entered players are not saved. And no matches will be made.                                                                                                                                                                         Press Ok to return.</value>
   </data>
   <data name="LeaveAddPlayersTitle" xml:space="preserve">
-    <value>Let op!</value>
+    <value>Attention!</value>
   </data>
 </root>

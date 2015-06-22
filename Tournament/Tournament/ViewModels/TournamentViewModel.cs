@@ -16,14 +16,22 @@
     /// </summary>
     public class TournamentViewModel : ViewModelBase
     {
+        #region Fields
+        /// <summary>
+        /// Fields.
+        /// </summary>
         private Tournament model;
         private ImageSource picture = null;
         private DelegateCommand uploadImageCommand;
 		private ObservableCollection<PlayersFixture> _playersFixtures;
 		private ObservableCollection<Fixture> _fixtures;
 		private ObservableCollection<Player> _players;
+        #endregion
 
-
+        #region Constructor
+        /// <summary>
+        /// Class constructor.
+        /// </summary>
         public TournamentViewModel(Tournament model)
         {
             this.model = model;
@@ -34,7 +42,12 @@
 			_fixtures = new ObservableCollection<Fixture>();
 			_players = new ObservableCollection<Player>();
         }
+        #endregion
 
+        #region Model values
+        /// <summary>
+        /// Model value description.
+        /// </summary>
         public string Description
         {
             get
@@ -57,6 +70,9 @@
             }
         }
 
+        /// <summary>
+        /// Model value type.
+        /// </summary>
         public string Type
         {
             get
@@ -79,6 +95,9 @@
             }
         }
 
+        /// <summary>
+        /// Model value Id.
+        /// </summary>
         public int Id
         {
             get
@@ -101,6 +120,9 @@
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public Tournament Model
         {
             get
@@ -117,7 +139,7 @@
         }
 
 		/// <summary>
-		/// Player collection
+		/// Player collection.
 		/// </summary>
 		public ObservableCollection<PlayersFixture> PlayersFixtures
 		{
@@ -133,7 +155,7 @@
 		}
 
 		/// <summary>
-		/// Fixture collection
+		/// Fixture collection.
 		/// </summary>
 		public ObservableCollection<Fixture> Fixtures
 		{
@@ -149,7 +171,7 @@
 		}
 
 		/// <summary>
-		/// Player collection
+		/// Player collection.
 		/// </summary>
 		public ObservableCollection<Player> Players
 		{
@@ -164,6 +186,9 @@
 			}
 		}
 
+        /// <summary>
+        /// Model value Name.
+        /// </summary>
         public string Name
         {
             get
@@ -186,6 +211,9 @@
             }
         }
 
+        /// <summary>
+        /// Use the ByteArrayBitmapExtensions class to get the picture as a bitmap.
+        /// </summary>
         public ImageSource ImageSource
         {
             get
@@ -199,6 +227,10 @@
             }
         }
 
+
+        /// <summary>
+        /// Model value Picture.
+        /// </summary>
         public byte[] Picture
         {
             set
@@ -209,6 +241,9 @@
             }
         }
 
+        /// <summary>
+        /// Model value status.
+        /// </summary>
         public Status Status
         {
             get
@@ -230,16 +265,18 @@
             }
         }
 
+        /// <summary>
+        /// StatusString for parsing Status value.
+        /// </summary>
         public string StatusString
         {
             get { return this.Status.ToString(); }
             set { this.Status = (Status)System.Enum.Parse(typeof(Status), value); }
         }
-        public ICommand UploadImageCommand
-        {
-            get { return this.uploadImageCommand; }
-        }
 
+        /// <summary>
+        /// Asyncronous method for uploading an image.
+        /// </summary>
         private async void UploadImage_Executed()
         {
             FileOpenPicker openPicker = new FileOpenPicker();
@@ -255,5 +292,16 @@
                 this.Picture = await imgFile.AsByteArray();
             }
         }
+        #endregion
+
+        #region Commands
+        /// <summary>
+        /// Delegate command for uploading an image.
+        /// </summary>
+        public ICommand UploadImageCommand
+        {
+            get { return this.uploadImageCommand; }
+        }
+        #endregion
     }
 }
