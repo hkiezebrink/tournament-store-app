@@ -230,6 +230,40 @@
 			return _fixtures;
 		}
 
+		/// <summary>
+		/// Get all the Fixtures from one Tournament and create custom PlayersFixture object
+		/// </summary>
+		/// <param name="tournamentId"></param>
+		/// <returns></returns>
+		public static ObservableCollection<PlayersFixture> GetPlayersFixture(int tournamentId)
+		{
+			ObservableCollection<PlayersFixture> _playersFixture = new ObservableCollection<PlayersFixture>();
+
+			using (var db = new SQLiteConnection(DbPath))
+			{
+				// Get Fixtures from one Tournament
+				List<Fixture> queryResult = (from p in db.Table<Fixture>() where p.TournamentId == tournamentId select p).ToList();
+				
+				// Create PlayersFixture list
+				foreach (Fixture item in queryResult)
+				{
+					// Get both Player objects
+					Player p1 = (from p in db.Table<Player>() where p.PlayerId == item.PlayerOne select p).FirstOrDefault();
+					Player p2 = (from p in db.Table<Player>() where p.PlayerId == item.PlayerTwo select p).FirstOrDefault();
+
+					// assign them to PlayersFixture
+					_playersFixture.Add(new PlayersFixture
+					{
+						MatchId = item.MatchId,
+						PlayerOne = p1,
+						PlayerTwo = p2,
+						Round = item.Round
+					});	
+				}
+			}
+			return _playersFixture;
+		}
+
 		#endregion
 
 		

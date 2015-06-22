@@ -26,7 +26,6 @@
             <RowDefinition Height="140"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
         <!-- Horizontal scrolling grid 
         ItemsSource="{Binding Source={StaticResource groupedItemsViewSource}}"
         -->
@@ -36,24 +35,26 @@
             AutomationProperties.Name="Grouped Items"
             Grid.RowSpan="2"
             Padding="116,137,40,46"
-            ItemsSource="{Binding Fixtures}"
+            ItemsSource="{Binding Tournament.PlayersFixtures}"
             SelectionMode="None"
             IsSwipeEnabled="false">
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid HorizontalAlignment="Left" Width="250" Height="250">
+                        <!--
                         <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
-                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
+                            <Image Source="{Binding Path=DataContext.Tournament.ImageSource, RelativeSource={RelativeSource FindAncestor, AncestorType={}}}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
                         </Border>
+                        -->
                         <StackPanel VerticalAlignment="Bottom" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
                             <TextBlock Text="{Binding MatchId}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" FontSize="18" Height="40" Margin="15,10,10,0" FontWeight="SemiBold"/>
                             <StackPanel Orientation="Horizontal" Margin="15,0,10,10">
                                 <TextBlock Text="PlayerOne:" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Width="auto" Margin="0, 0, 20, 0" FontFamily="Global User Interface"></TextBlock>
-                                <TextBlock Text="{Binding PlayerOneName}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" TextWrapping="NoWrap" FontSize="14" FontFamily="Global User Interface"/>
+                                <TextBlock Text="{Binding PlayerOne.Name}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" TextWrapping="NoWrap" FontSize="14" FontFamily="Global User Interface"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,10,10">
                                 <TextBlock Text="PlayerTwo:" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Width="auto" Margin="0, 0, 20, 0" FontFamily="Global User Interface"></TextBlock>
-                                <TextBlock Text="{Binding PlayerTwoName}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" TextWrapping="NoWrap" FontSize="14" FontFamily="Global User Interface" />
+                                <TextBlock Text="{Binding PlayerTwo.Name}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" TextWrapping="NoWrap" FontSize="14" FontFamily="Global User Interface" />
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -96,8 +97,11 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button" FontFamily="Global User Interface"/>
-            <TextBlock x:Name="pageTitle" Text="Matches" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" FontFamily="Global User Interface"/>
+            <TextBlock x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" FontFamily="Global User Interface" >
+                <Run Text="Matches:"/>
+                <Run Text="{Binding Tournament.Model.Name}"/>
+            </TextBlock>
         </Grid>
     </Grid>
 </local:ViewBase>

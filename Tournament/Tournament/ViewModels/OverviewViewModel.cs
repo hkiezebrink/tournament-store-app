@@ -72,7 +72,7 @@
 		private void ShowSchedule()
 		{
 			// TODO navigate to Matches page (not created yet)
-			NavigationService.Navigate("Matches", SelectedTournament.Model.TournamentId);				
+			NavigationService.Navigate("Matches", SelectedTournament);				
 		}
 
 		public ICommand EditCommand

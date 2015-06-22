@@ -125,7 +125,7 @@ namespace Tournament
 			// Save player objects in the database
 			Dal.InsertPlayers(Tournament.Players, _tournamentId);
 			CreateFixtures();
-			NavigationService.Navigate("Matches", _tournamentId);
+			NavigationService.Navigate("Matches", Tournament);
 			// TODO Generate schedule
 			/* Maak een tijdelijk lijst met Player objecten
 			 * en zodra het aantal van deze lijst groter is dan 1

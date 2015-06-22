@@ -16,9 +16,8 @@ namespace Tournament
 	public class MatchesViewModel : ViewModelBase
 	{
 		private int _tournamentId;
-		private string _tournamentName;
+		private TournamentViewModel _selectedTournament;
 		private ObservableCollection<Fixture> _fixtures;
-		private Models.Tournament _tournament;
 
 		public MatchesViewModel()
 		{
@@ -28,27 +27,20 @@ namespace Tournament
 
 		private void GoBack()
 		{
-			NavigationService.GoBack();
+			NavigationService.GoHome();
 		}
 		
 		public ICommand GoBackCommand { get; private set; }
 
 		/// <summary>
-		/// Tournament name
+		/// Tournament type of TournamentViewModel
 		/// </summary>
-		public string TournamentName
+		public TournamentViewModel Tournament
 		{
-			get
-			{
-				return _tournamentName;
-			}
+			get { return this._selectedTournament; }
 			set
 			{
-				if (_tournamentName != value)
-				{
-					_tournamentName = value;
-					OnPropertyChanged();
-				}
+				this.SetProperty(ref this._selectedTournament, value);
 			}
 		}
 
@@ -70,15 +62,16 @@ namespace Tournament
 			if (navigationEvent.Parameter != null)
 			{
 				// get tournament and save its name
-				_tournamentId = (int)navigationEvent.Parameter;
-				_tournament = Dal.GetTournamentById(_tournamentId);
-				TournamentName = _tournament.Name;
-				Fixtures = Dal.GetFixtures(_tournamentId);
+				Tournament = navigationEvent.Parameter as TournamentViewModel;
+				_tournamentId = Tournament.Model.TournamentId;
+
+				Tournament.PlayersFixtures = Dal.GetPlayersFixture(_tournamentId);
+
 			}
 			else
 			{
 				// Invalid tournament ID go home
-				// NavigationService.GoHome();
+				NavigationService.GoHome();
 			}
 		}
 	}
