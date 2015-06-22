@@ -34,7 +34,7 @@
         <Grid Grid.Row="1">
             <Button TabIndex="1" Command="{Binding InsertPlayerCommand}" Content="Insert Player" HorizontalAlignment="Left" Margin="463,185,0,0" VerticalAlignment="Top" />
             <Button TabIndex="1" Command="{Binding GenerateScheduleCommand}" Content="Generate Schedule" HorizontalAlignment="Left" Margin="1183,185,0,0" VerticalAlignment="Top" />
-            <ListView ItemsSource="{Binding Players}" 
+            <ListView ItemsSource="{Binding Tournament.Players}" 
                       HorizontalAlignment="Left" 
                       Height="590" Margin="887,79,0,0" 
                       BorderBrush="Azure" 
@@ -47,14 +47,6 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Naam:" Margin="0,0,10,0" />
                                 <TextBlock Text="{Binding Name}" />
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="PlayerId:" Margin="0,0,10,0" />
-                                <TextBlock Text="{Binding Id}" />
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="TournamentId:" Margin="0,0,10,0" />
-                                <TextBlock Text="{Binding TournamentId}" />
                             </StackPanel>
                         </StackPanel>
                         
@@ -76,7 +68,7 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button" FontFamily="Global User Interface"/>
-            <TextBlock x:Name="pageTitle" Text="{Binding TournamentName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+            <TextBlock x:Name="pageTitle" Text="{Binding Tournament.Model.Name}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" FontFamily="Global User Interface"/>
         </Grid>
 

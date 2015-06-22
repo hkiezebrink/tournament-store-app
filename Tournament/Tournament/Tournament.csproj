@@ -124,6 +124,7 @@
     <Compile Include="EnumerationSlider\StringExtensions.cs" />
     <Compile Include="Helpers\ByteArrayBitmapExtensions.cs" />
     <Compile Include="Models\Fixture.cs" />
+    <Compile Include="Models\PlayersFixture.cs" />
     <Compile Include="ViewModels\MatchesViewModel.cs" />
     <Compile Include="Views\Matches.xaml.cs">
       <DependentUpon>Matches.xaml</DependentUpon>

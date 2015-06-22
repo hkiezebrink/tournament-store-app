@@ -8,6 +8,7 @@
     using Windows.Storage;
     using Windows.Storage.Pickers;
     using Windows.UI.Xaml.Media;
+	using System.Collections.ObjectModel;
 
     /// <summary>
     /// This class is used for binding the user input in the mainpage.xaml. When binding is TwoWay both the
@@ -18,11 +19,20 @@
         private Tournament model;
         private ImageSource picture = null;
         private DelegateCommand uploadImageCommand;
+		private ObservableCollection<PlayersFixture> _playersFixtures;
+		private ObservableCollection<Fixture> _fixtures;
+		private ObservableCollection<Player> _players;
+
 
         public TournamentViewModel(Tournament model)
         {
             this.model = model;
             this.uploadImageCommand = new DelegateCommand(this.UploadImage_Executed);
+
+
+			_playersFixtures = new ObservableCollection<PlayersFixture>();
+			_fixtures = new ObservableCollection<Fixture>();
+			_players = new ObservableCollection<Player>();
         }
 
         public string Description
@@ -105,6 +115,55 @@
                 this.OnPropertyChanged(string.Empty);
             }
         }
+
+		/// <summary>
+		/// Player collection
+		/// </summary>
+		public ObservableCollection<PlayersFixture> PlayersFixtures
+		{
+			get
+			{
+				return this._playersFixtures;
+			}
+
+			set
+			{
+				this.SetProperty(ref this._playersFixtures, value);
+			}
+		}
+
+		/// <summary>
+		/// Fixture collection
+		/// </summary>
+		public ObservableCollection<Fixture> Fixtures
+		{
+			get
+			{
+				return this._fixtures;
+			}
+
+			set
+			{
+				this.SetProperty(ref _fixtures, value);
+			}
+		}
+
+		/// <summary>
+		/// Player collection
+		/// </summary>
+		public ObservableCollection<Player> Players
+		{
+			get
+			{
+				return this._players;
+			}
+
+			set
+			{
+				this.SetProperty(ref _players, value);
+			}
+		}
+
         public string Name
         {
             get

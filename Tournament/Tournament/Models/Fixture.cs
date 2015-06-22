@@ -12,18 +12,18 @@ namespace Tournament.Models
 		/// <summary>
 		/// Gets or sets the identifier.
 		/// </summary>
-		[PrimaryKey, AutoIncrement]
+		[NotNull]
 		public int MatchId { get; set; }
 
 		/// <summary>
 		/// Gets or sets the PlayerOneName.
 		/// </summary>
-		public string PlayerOneName { get; set; }
+		public int PlayerOne { get; set; }
 
 		/// <summary>
 		/// Gets or sets the PlayerTwoName.
 		/// </summary>
-		public string PlayerTwoName { get; set; }
+		public int PlayerTwo { get; set; }
 
 		public int ScoreOne { get; set; }
 		public int ScoreTwo { get; set; }

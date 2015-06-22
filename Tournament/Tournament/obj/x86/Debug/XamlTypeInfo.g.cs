@@ -124,7 +124,7 @@ namespace Tournament.Tournament_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[39];
+            _typeNameTable = new string[42];
             _typeNameTable[0] = "Tournament.ViewBase";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -147,25 +147,28 @@ namespace Tournament.Tournament_XamlTypeInfo
             _typeNameTable[19] = "System.Collections.ObjectModel.ObservableCollection`1<Tournament.Models.Player>";
             _typeNameTable[20] = "System.Collections.ObjectModel.Collection`1<Tournament.Models.Player>";
             _typeNameTable[21] = "Tournament.Models.Player";
-            _typeNameTable[22] = "Tournament.AddPlayers";
-            _typeNameTable[23] = "Tournament.MVVM.BooleanNegationConverter";
-            _typeNameTable[24] = "Tournament.MVVM.BooleanToVisibilityConverter";
-            _typeNameTable[25] = "Boolean";
-            _typeNameTable[26] = "Tournament.OverviewViewModel";
-            _typeNameTable[27] = "System.Collections.ObjectModel.ObservableCollection`1<Tournament.TournamentViewModel>";
-            _typeNameTable[28] = "System.Collections.ObjectModel.Collection`1<Tournament.TournamentViewModel>";
-            _typeNameTable[29] = "Tournament.TournamentViewModel";
+            _typeNameTable[22] = "Tournament.TournamentViewModel";
+            _typeNameTable[23] = "Tournament.AddPlayers";
+            _typeNameTable[24] = "Tournament.MVVM.BooleanNegationConverter";
+            _typeNameTable[25] = "Tournament.MVVM.BooleanToVisibilityConverter";
+            _typeNameTable[26] = "Boolean";
+            _typeNameTable[27] = "Tournament.OverviewViewModel";
+            _typeNameTable[28] = "System.Collections.ObjectModel.ObservableCollection`1<Tournament.TournamentViewModel>";
+            _typeNameTable[29] = "System.Collections.ObjectModel.Collection`1<Tournament.TournamentViewModel>";
             _typeNameTable[30] = "Tournament.Models.Tournament";
-            _typeNameTable[31] = "Windows.UI.Xaml.Media.ImageSource";
-            _typeNameTable[32] = "Byte[]";
-            _typeNameTable[33] = "System.Array";
-            _typeNameTable[34] = "Byte";
-            _typeNameTable[35] = "System.ValueType";
-            _typeNameTable[36] = "Tournament.Status";
-            _typeNameTable[37] = "System.Enum";
-            _typeNameTable[38] = "Tournament.Overview";
+            _typeNameTable[31] = "System.Collections.ObjectModel.ObservableCollection`1<Tournament.Models.PlayersFixture>";
+            _typeNameTable[32] = "System.Collections.ObjectModel.Collection`1<Tournament.Models.PlayersFixture>";
+            _typeNameTable[33] = "Tournament.Models.PlayersFixture";
+            _typeNameTable[34] = "Windows.UI.Xaml.Media.ImageSource";
+            _typeNameTable[35] = "Byte[]";
+            _typeNameTable[36] = "System.Array";
+            _typeNameTable[37] = "Byte";
+            _typeNameTable[38] = "System.ValueType";
+            _typeNameTable[39] = "Tournament.Status";
+            _typeNameTable[40] = "System.Enum";
+            _typeNameTable[41] = "Tournament.Overview";
 
-            _typeTable = new global::System.Type[39];
+            _typeTable = new global::System.Type[42];
             _typeTable[0] = typeof(global::Tournament.ViewBase);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -188,23 +191,26 @@ namespace Tournament.Tournament_XamlTypeInfo
             _typeTable[19] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Tournament.Models.Player>);
             _typeTable[20] = typeof(global::System.Collections.ObjectModel.Collection<global::Tournament.Models.Player>);
             _typeTable[21] = typeof(global::Tournament.Models.Player);
-            _typeTable[22] = typeof(global::Tournament.AddPlayers);
-            _typeTable[23] = typeof(global::Tournament.MVVM.BooleanNegationConverter);
-            _typeTable[24] = typeof(global::Tournament.MVVM.BooleanToVisibilityConverter);
-            _typeTable[25] = typeof(global::System.Boolean);
-            _typeTable[26] = typeof(global::Tournament.OverviewViewModel);
-            _typeTable[27] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Tournament.TournamentViewModel>);
-            _typeTable[28] = typeof(global::System.Collections.ObjectModel.Collection<global::Tournament.TournamentViewModel>);
-            _typeTable[29] = typeof(global::Tournament.TournamentViewModel);
+            _typeTable[22] = typeof(global::Tournament.TournamentViewModel);
+            _typeTable[23] = typeof(global::Tournament.AddPlayers);
+            _typeTable[24] = typeof(global::Tournament.MVVM.BooleanNegationConverter);
+            _typeTable[25] = typeof(global::Tournament.MVVM.BooleanToVisibilityConverter);
+            _typeTable[26] = typeof(global::System.Boolean);
+            _typeTable[27] = typeof(global::Tournament.OverviewViewModel);
+            _typeTable[28] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Tournament.TournamentViewModel>);
+            _typeTable[29] = typeof(global::System.Collections.ObjectModel.Collection<global::Tournament.TournamentViewModel>);
             _typeTable[30] = typeof(global::Tournament.Models.Tournament);
-            _typeTable[31] = typeof(global::Windows.UI.Xaml.Media.ImageSource);
-            _typeTable[32] = typeof(global::System.Byte[]);
-            _typeTable[33] = typeof(global::System.Array);
-            _typeTable[34] = typeof(global::System.Byte);
-            _typeTable[35] = typeof(global::System.ValueType);
-            _typeTable[36] = typeof(global::Tournament.Status);
-            _typeTable[37] = typeof(global::System.Enum);
-            _typeTable[38] = typeof(global::Tournament.Overview);
+            _typeTable[31] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Tournament.Models.PlayersFixture>);
+            _typeTable[32] = typeof(global::System.Collections.ObjectModel.Collection<global::Tournament.Models.PlayersFixture>);
+            _typeTable[33] = typeof(global::Tournament.Models.PlayersFixture);
+            _typeTable[34] = typeof(global::Windows.UI.Xaml.Media.ImageSource);
+            _typeTable[35] = typeof(global::System.Byte[]);
+            _typeTable[36] = typeof(global::System.Array);
+            _typeTable[37] = typeof(global::System.Byte);
+            _typeTable[38] = typeof(global::System.ValueType);
+            _typeTable[39] = typeof(global::Tournament.Status);
+            _typeTable[40] = typeof(global::System.Enum);
+            _typeTable[41] = typeof(global::Tournament.Overview);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -252,14 +258,17 @@ namespace Tournament.Tournament_XamlTypeInfo
         private object Activate_19_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Tournament.Models.Player>(); }
         private object Activate_20_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Tournament.Models.Player>(); }
         private object Activate_21_Player() { return new global::Tournament.Models.Player(); }
-        private object Activate_22_AddPlayers() { return new global::Tournament.AddPlayers(); }
-        private object Activate_23_BooleanNegationConverter() { return new global::Tournament.MVVM.BooleanNegationConverter(); }
-        private object Activate_24_BooleanToVisibilityConverter() { return new global::Tournament.MVVM.BooleanToVisibilityConverter(); }
-        private object Activate_26_OverviewViewModel() { return new global::Tournament.OverviewViewModel(); }
-        private object Activate_27_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Tournament.TournamentViewModel>(); }
-        private object Activate_28_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Tournament.TournamentViewModel>(); }
+        private object Activate_23_AddPlayers() { return new global::Tournament.AddPlayers(); }
+        private object Activate_24_BooleanNegationConverter() { return new global::Tournament.MVVM.BooleanNegationConverter(); }
+        private object Activate_25_BooleanToVisibilityConverter() { return new global::Tournament.MVVM.BooleanToVisibilityConverter(); }
+        private object Activate_27_OverviewViewModel() { return new global::Tournament.OverviewViewModel(); }
+        private object Activate_28_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Tournament.TournamentViewModel>(); }
+        private object Activate_29_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Tournament.TournamentViewModel>(); }
         private object Activate_30_Tournament() { return new global::Tournament.Models.Tournament(); }
-        private object Activate_38_Overview() { return new global::Tournament.Overview(); }
+        private object Activate_31_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Tournament.Models.PlayersFixture>(); }
+        private object Activate_32_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Tournament.Models.PlayersFixture>(); }
+        private object Activate_33_PlayersFixture() { return new global::Tournament.Models.PlayersFixture(); }
+        private object Activate_41_Overview() { return new global::Tournament.Overview(); }
         private void VectorAdd_9_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Tournament.Models.Fixture>)instance;
@@ -284,16 +293,28 @@ namespace Tournament.Tournament_XamlTypeInfo
             var newItem = (global::Tournament.Models.Player)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_27_ObservableCollection(object instance, object item)
+        private void VectorAdd_28_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Tournament.TournamentViewModel>)instance;
             var newItem = (global::Tournament.TournamentViewModel)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_28_Collection(object instance, object item)
+        private void VectorAdd_29_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Tournament.TournamentViewModel>)instance;
             var newItem = (global::Tournament.TournamentViewModel)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_31_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Tournament.Models.PlayersFixture>)instance;
+            var newItem = (global::Tournament.Models.PlayersFixture)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_32_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Tournament.Models.PlayersFixture>)instance;
+            var newItem = (global::Tournament.Models.PlayersFixture)item;
             collection.Add(newItem);
         }
 
@@ -375,8 +396,8 @@ namespace Tournament.Tournament_XamlTypeInfo
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_11_Fixture;
                 userType.AddMemberName("MatchId");
-                userType.AddMemberName("PlayerOneName");
-                userType.AddMemberName("PlayerTwoName");
+                userType.AddMemberName("PlayerOne");
+                userType.AddMemberName("PlayerTwo");
                 userType.AddMemberName("ScoreOne");
                 userType.AddMemberName("ScoreTwo");
                 userType.AddMemberName("Round");
@@ -422,7 +443,7 @@ namespace Tournament.Tournament_XamlTypeInfo
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Tournament.ViewModelBase"));
                 userType.Activator = Activate_18_AddPlayerViewModel;
                 userType.AddMemberName("Players");
-                userType.AddMemberName("TournamentName");
+                userType.AddMemberName("Tournament");
                 userType.AddMemberName("PlayerName");
                 userType.AddMemberName("InsertPlayerCommand");
                 userType.AddMemberName("GenerateScheduleCommand");
@@ -453,32 +474,50 @@ namespace Tournament.Tournament_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 22:   //  Tournament.AddPlayers
+            case 22:   //  Tournament.TournamentViewModel
+                userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Tournament.ViewModelBase"));
+                userType.AddMemberName("Description");
+                userType.AddMemberName("Type");
+                userType.AddMemberName("Id");
+                userType.AddMemberName("Model");
+                userType.AddMemberName("PlayersFixtures");
+                userType.AddMemberName("Fixtures");
+                userType.AddMemberName("Players");
+                userType.AddMemberName("Name");
+                userType.AddMemberName("ImageSource");
+                userType.AddMemberName("Picture");
+                userType.AddMemberName("Status");
+                userType.AddMemberName("StatusString");
+                userType.AddMemberName("UploadImageCommand");
+                xamlType = userType;
+                break;
+
+            case 23:   //  Tournament.AddPlayers
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Tournament.ViewBase"));
-                userType.Activator = Activate_22_AddPlayers;
+                userType.Activator = Activate_23_AddPlayers;
                 xamlType = userType;
                 break;
 
-            case 23:   //  Tournament.MVVM.BooleanNegationConverter
+            case 24:   //  Tournament.MVVM.BooleanNegationConverter
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_23_BooleanNegationConverter;
+                userType.Activator = Activate_24_BooleanNegationConverter;
                 xamlType = userType;
                 break;
 
-            case 24:   //  Tournament.MVVM.BooleanToVisibilityConverter
+            case 25:   //  Tournament.MVVM.BooleanToVisibilityConverter
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_24_BooleanToVisibilityConverter;
+                userType.Activator = Activate_25_BooleanToVisibilityConverter;
                 userType.AddMemberName("IsReversed");
                 xamlType = userType;
                 break;
 
-            case 25:   //  Boolean
+            case 26:   //  Boolean
                 xamlType = new global::Tournament.Tournament_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 26:   //  Tournament.OverviewViewModel
+            case 27:   //  Tournament.OverviewViewModel
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Tournament.ViewModelBase"));
-                userType.Activator = Activate_26_OverviewViewModel;
+                userType.Activator = Activate_27_OverviewViewModel;
                 userType.AddMemberName("EditCommand");
                 userType.AddMemberName("IsInDesignMode");
                 userType.AddMemberName("IsInEditMode");
@@ -496,32 +535,17 @@ namespace Tournament.Tournament_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 27:   //  System.Collections.ObjectModel.ObservableCollection`1<Tournament.TournamentViewModel>
+            case 28:   //  System.Collections.ObjectModel.ObservableCollection`1<Tournament.TournamentViewModel>
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Tournament.TournamentViewModel>"));
-                userType.CollectionAdd = VectorAdd_27_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_28_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 28:   //  System.Collections.ObjectModel.Collection`1<Tournament.TournamentViewModel>
+            case 29:   //  System.Collections.ObjectModel.Collection`1<Tournament.TournamentViewModel>
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_28_Collection;
-                userType.CollectionAdd = VectorAdd_28_Collection;
-                xamlType = userType;
-                break;
-
-            case 29:   //  Tournament.TournamentViewModel
-                userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Tournament.ViewModelBase"));
-                userType.AddMemberName("Description");
-                userType.AddMemberName("Type");
-                userType.AddMemberName("Id");
-                userType.AddMemberName("Model");
-                userType.AddMemberName("Name");
-                userType.AddMemberName("ImageSource");
-                userType.AddMemberName("Picture");
-                userType.AddMemberName("Status");
-                userType.AddMemberName("StatusString");
-                userType.AddMemberName("UploadImageCommand");
+                userType.Activator = Activate_29_Collection;
+                userType.CollectionAdd = VectorAdd_29_Collection;
                 xamlType = userType;
                 break;
 
@@ -531,32 +555,58 @@ namespace Tournament.Tournament_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 31:   //  Windows.UI.Xaml.Media.ImageSource
+            case 31:   //  System.Collections.ObjectModel.ObservableCollection`1<Tournament.Models.PlayersFixture>
+                userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Tournament.Models.PlayersFixture>"));
+                userType.CollectionAdd = VectorAdd_31_ObservableCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 32:   //  System.Collections.ObjectModel.Collection`1<Tournament.Models.PlayersFixture>
+                userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_32_Collection;
+                userType.CollectionAdd = VectorAdd_32_Collection;
+                xamlType = userType;
+                break;
+
+            case 33:   //  Tournament.Models.PlayersFixture
+                userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_33_PlayersFixture;
+                userType.AddMemberName("MatchId");
+                userType.AddMemberName("PlayerOne");
+                userType.AddMemberName("PlayerTwo");
+                userType.AddMemberName("ScoreOne");
+                userType.AddMemberName("ScoreTwo");
+                userType.AddMemberName("Round");
+                xamlType = userType;
+                break;
+
+            case 34:   //  Windows.UI.Xaml.Media.ImageSource
                 xamlType = new global::Tournament.Tournament_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 32:   //  Byte[]
+            case 35:   //  Byte[]
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Array"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 33:   //  System.Array
+            case 36:   //  System.Array
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 34:   //  Byte
+            case 37:   //  Byte
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
-            case 35:   //  System.ValueType
+            case 38:   //  System.ValueType
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 36:   //  Tournament.Status
+            case 39:   //  Tournament.Status
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Planned", global::Tournament.Status.Planned);
                 userType.AddEnumValue("Playing", global::Tournament.Status.Playing);
@@ -564,14 +614,14 @@ namespace Tournament.Tournament_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 37:   //  System.Enum
+            case 40:   //  System.Enum
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
-            case 38:   //  Tournament.Overview
+            case 41:   //  Tournament.Overview
                 userType = new global::Tournament.Tournament_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Tournament.ViewBase"));
-                userType.Activator = Activate_38_Overview;
+                userType.Activator = Activate_41_Overview;
                 xamlType = userType;
                 break;
             }
@@ -624,25 +674,25 @@ namespace Tournament.Tournament_XamlTypeInfo
             var that = (global::Tournament.Models.Fixture)instance;
             that.MatchId = (global::System.Int32)Value;
         }
-        private object get_5_Fixture_PlayerOneName(object instance)
+        private object get_5_Fixture_PlayerOne(object instance)
         {
             var that = (global::Tournament.Models.Fixture)instance;
-            return that.PlayerOneName;
+            return that.PlayerOne;
         }
-        private void set_5_Fixture_PlayerOneName(object instance, object Value)
+        private void set_5_Fixture_PlayerOne(object instance, object Value)
         {
             var that = (global::Tournament.Models.Fixture)instance;
-            that.PlayerOneName = (global::System.String)Value;
+            that.PlayerOne = (global::System.Int32)Value;
         }
-        private object get_6_Fixture_PlayerTwoName(object instance)
+        private object get_6_Fixture_PlayerTwo(object instance)
         {
             var that = (global::Tournament.Models.Fixture)instance;
-            return that.PlayerTwoName;
+            return that.PlayerTwo;
         }
-        private void set_6_Fixture_PlayerTwoName(object instance, object Value)
+        private void set_6_Fixture_PlayerTwo(object instance, object Value)
         {
             var that = (global::Tournament.Models.Fixture)instance;
-            that.PlayerTwoName = (global::System.String)Value;
+            that.PlayerTwo = (global::System.Int32)Value;
         }
         private object get_7_Fixture_ScoreOne(object instance)
         {
@@ -749,15 +799,15 @@ namespace Tournament.Tournament_XamlTypeInfo
             var that = (global::Tournament.Models.Player)instance;
             that.TournamentId = (global::System.Int32)Value;
         }
-        private object get_18_AddPlayerViewModel_TournamentName(object instance)
+        private object get_18_AddPlayerViewModel_Tournament(object instance)
         {
             var that = (global::Tournament.AddPlayerViewModel)instance;
-            return that.TournamentName;
+            return that.Tournament;
         }
-        private void set_18_AddPlayerViewModel_TournamentName(object instance, object Value)
+        private void set_18_AddPlayerViewModel_Tournament(object instance, object Value)
         {
             var that = (global::Tournament.AddPlayerViewModel)instance;
-            that.TournamentName = (global::System.String)Value;
+            that.Tournament = (global::Tournament.TournamentViewModel)Value;
         }
         private object get_19_AddPlayerViewModel_PlayerName(object instance)
         {
@@ -909,57 +959,147 @@ namespace Tournament.Tournament_XamlTypeInfo
             var that = (global::Tournament.TournamentViewModel)instance;
             that.Model = (global::Tournament.Models.Tournament)Value;
         }
-        private object get_41_TournamentViewModel_Name(object instance)
+        private object get_41_TournamentViewModel_PlayersFixtures(object instance)
+        {
+            var that = (global::Tournament.TournamentViewModel)instance;
+            return that.PlayersFixtures;
+        }
+        private void set_41_TournamentViewModel_PlayersFixtures(object instance, object Value)
+        {
+            var that = (global::Tournament.TournamentViewModel)instance;
+            that.PlayersFixtures = (global::System.Collections.ObjectModel.ObservableCollection<global::Tournament.Models.PlayersFixture>)Value;
+        }
+        private object get_42_PlayersFixture_MatchId(object instance)
+        {
+            var that = (global::Tournament.Models.PlayersFixture)instance;
+            return that.MatchId;
+        }
+        private void set_42_PlayersFixture_MatchId(object instance, object Value)
+        {
+            var that = (global::Tournament.Models.PlayersFixture)instance;
+            that.MatchId = (global::System.Int32)Value;
+        }
+        private object get_43_PlayersFixture_PlayerOne(object instance)
+        {
+            var that = (global::Tournament.Models.PlayersFixture)instance;
+            return that.PlayerOne;
+        }
+        private void set_43_PlayersFixture_PlayerOne(object instance, object Value)
+        {
+            var that = (global::Tournament.Models.PlayersFixture)instance;
+            that.PlayerOne = (global::Tournament.Models.Player)Value;
+        }
+        private object get_44_PlayersFixture_PlayerTwo(object instance)
+        {
+            var that = (global::Tournament.Models.PlayersFixture)instance;
+            return that.PlayerTwo;
+        }
+        private void set_44_PlayersFixture_PlayerTwo(object instance, object Value)
+        {
+            var that = (global::Tournament.Models.PlayersFixture)instance;
+            that.PlayerTwo = (global::Tournament.Models.Player)Value;
+        }
+        private object get_45_PlayersFixture_ScoreOne(object instance)
+        {
+            var that = (global::Tournament.Models.PlayersFixture)instance;
+            return that.ScoreOne;
+        }
+        private void set_45_PlayersFixture_ScoreOne(object instance, object Value)
+        {
+            var that = (global::Tournament.Models.PlayersFixture)instance;
+            that.ScoreOne = (global::System.Int32)Value;
+        }
+        private object get_46_PlayersFixture_ScoreTwo(object instance)
+        {
+            var that = (global::Tournament.Models.PlayersFixture)instance;
+            return that.ScoreTwo;
+        }
+        private void set_46_PlayersFixture_ScoreTwo(object instance, object Value)
+        {
+            var that = (global::Tournament.Models.PlayersFixture)instance;
+            that.ScoreTwo = (global::System.Int32)Value;
+        }
+        private object get_47_PlayersFixture_Round(object instance)
+        {
+            var that = (global::Tournament.Models.PlayersFixture)instance;
+            return that.Round;
+        }
+        private void set_47_PlayersFixture_Round(object instance, object Value)
+        {
+            var that = (global::Tournament.Models.PlayersFixture)instance;
+            that.Round = (global::System.Int32)Value;
+        }
+        private object get_48_TournamentViewModel_Fixtures(object instance)
+        {
+            var that = (global::Tournament.TournamentViewModel)instance;
+            return that.Fixtures;
+        }
+        private void set_48_TournamentViewModel_Fixtures(object instance, object Value)
+        {
+            var that = (global::Tournament.TournamentViewModel)instance;
+            that.Fixtures = (global::System.Collections.ObjectModel.ObservableCollection<global::Tournament.Models.Fixture>)Value;
+        }
+        private object get_49_TournamentViewModel_Players(object instance)
+        {
+            var that = (global::Tournament.TournamentViewModel)instance;
+            return that.Players;
+        }
+        private void set_49_TournamentViewModel_Players(object instance, object Value)
+        {
+            var that = (global::Tournament.TournamentViewModel)instance;
+            that.Players = (global::System.Collections.ObjectModel.ObservableCollection<global::Tournament.Models.Player>)Value;
+        }
+        private object get_50_TournamentViewModel_Name(object instance)
         {
             var that = (global::Tournament.TournamentViewModel)instance;
             return that.Name;
         }
-        private void set_41_TournamentViewModel_Name(object instance, object Value)
+        private void set_50_TournamentViewModel_Name(object instance, object Value)
         {
             var that = (global::Tournament.TournamentViewModel)instance;
             that.Name = (global::System.String)Value;
         }
-        private object get_42_TournamentViewModel_ImageSource(object instance)
+        private object get_51_TournamentViewModel_ImageSource(object instance)
         {
             var that = (global::Tournament.TournamentViewModel)instance;
             return that.ImageSource;
         }
-        private void set_43_TournamentViewModel_Picture(object instance, object Value)
+        private void set_52_TournamentViewModel_Picture(object instance, object Value)
         {
             var that = (global::Tournament.TournamentViewModel)instance;
             that.Picture = (global::System.Byte[])Value;
         }
-        private object get_44_TournamentViewModel_Status(object instance)
+        private object get_53_TournamentViewModel_Status(object instance)
         {
             var that = (global::Tournament.TournamentViewModel)instance;
             return that.Status;
         }
-        private void set_44_TournamentViewModel_Status(object instance, object Value)
+        private void set_53_TournamentViewModel_Status(object instance, object Value)
         {
             var that = (global::Tournament.TournamentViewModel)instance;
             that.Status = (global::Tournament.Status)Value;
         }
-        private object get_45_TournamentViewModel_StatusString(object instance)
+        private object get_54_TournamentViewModel_StatusString(object instance)
         {
             var that = (global::Tournament.TournamentViewModel)instance;
             return that.StatusString;
         }
-        private void set_45_TournamentViewModel_StatusString(object instance, object Value)
+        private void set_54_TournamentViewModel_StatusString(object instance, object Value)
         {
             var that = (global::Tournament.TournamentViewModel)instance;
             that.StatusString = (global::System.String)Value;
         }
-        private object get_46_TournamentViewModel_UploadImageCommand(object instance)
+        private object get_55_TournamentViewModel_UploadImageCommand(object instance)
         {
             var that = (global::Tournament.TournamentViewModel)instance;
             return that.UploadImageCommand;
         }
-        private object get_47_OverviewViewModel_SelectedTournament(object instance)
+        private object get_56_OverviewViewModel_SelectedTournament(object instance)
         {
             var that = (global::Tournament.OverviewViewModel)instance;
             return that.SelectedTournament;
         }
-        private void set_47_OverviewViewModel_SelectedTournament(object instance, object Value)
+        private void set_56_OverviewViewModel_SelectedTournament(object instance, object Value)
         {
             var that = (global::Tournament.OverviewViewModel)instance;
             that.SelectedTournament = (global::Tournament.TournamentViewModel)Value;
@@ -1003,17 +1143,17 @@ namespace Tournament.Tournament_XamlTypeInfo
                 xamlMember.Getter = get_4_Fixture_MatchId;
                 xamlMember.Setter = set_4_Fixture_MatchId;
                 break;
-            case "Tournament.Models.Fixture.PlayerOneName":
+            case "Tournament.Models.Fixture.PlayerOne":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.Models.Fixture");
-                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "PlayerOneName", "String");
-                xamlMember.Getter = get_5_Fixture_PlayerOneName;
-                xamlMember.Setter = set_5_Fixture_PlayerOneName;
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "PlayerOne", "Int32");
+                xamlMember.Getter = get_5_Fixture_PlayerOne;
+                xamlMember.Setter = set_5_Fixture_PlayerOne;
                 break;
-            case "Tournament.Models.Fixture.PlayerTwoName":
+            case "Tournament.Models.Fixture.PlayerTwo":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.Models.Fixture");
-                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "PlayerTwoName", "String");
-                xamlMember.Getter = get_6_Fixture_PlayerTwoName;
-                xamlMember.Setter = set_6_Fixture_PlayerTwoName;
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "PlayerTwo", "Int32");
+                xamlMember.Getter = get_6_Fixture_PlayerTwo;
+                xamlMember.Setter = set_6_Fixture_PlayerTwo;
                 break;
             case "Tournament.Models.Fixture.ScoreOne":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.Models.Fixture");
@@ -1083,11 +1223,11 @@ namespace Tournament.Tournament_XamlTypeInfo
                 xamlMember.Getter = get_17_Player_TournamentId;
                 xamlMember.Setter = set_17_Player_TournamentId;
                 break;
-            case "Tournament.AddPlayerViewModel.TournamentName":
+            case "Tournament.AddPlayerViewModel.Tournament":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.AddPlayerViewModel");
-                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "TournamentName", "String");
-                xamlMember.Getter = get_18_AddPlayerViewModel_TournamentName;
-                xamlMember.Setter = set_18_AddPlayerViewModel_TournamentName;
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "Tournament", "Tournament.TournamentViewModel");
+                xamlMember.Getter = get_18_AddPlayerViewModel_Tournament;
+                xamlMember.Setter = set_18_AddPlayerViewModel_Tournament;
                 break;
             case "Tournament.AddPlayerViewModel.PlayerName":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.AddPlayerViewModel");
@@ -1221,46 +1361,100 @@ namespace Tournament.Tournament_XamlTypeInfo
                 xamlMember.Getter = get_40_TournamentViewModel_Model;
                 xamlMember.Setter = set_40_TournamentViewModel_Model;
                 break;
+            case "Tournament.TournamentViewModel.PlayersFixtures":
+                userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.TournamentViewModel");
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "PlayersFixtures", "System.Collections.ObjectModel.ObservableCollection`1<Tournament.Models.PlayersFixture>");
+                xamlMember.Getter = get_41_TournamentViewModel_PlayersFixtures;
+                xamlMember.Setter = set_41_TournamentViewModel_PlayersFixtures;
+                break;
+            case "Tournament.Models.PlayersFixture.MatchId":
+                userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.Models.PlayersFixture");
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "MatchId", "Int32");
+                xamlMember.Getter = get_42_PlayersFixture_MatchId;
+                xamlMember.Setter = set_42_PlayersFixture_MatchId;
+                break;
+            case "Tournament.Models.PlayersFixture.PlayerOne":
+                userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.Models.PlayersFixture");
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "PlayerOne", "Tournament.Models.Player");
+                xamlMember.Getter = get_43_PlayersFixture_PlayerOne;
+                xamlMember.Setter = set_43_PlayersFixture_PlayerOne;
+                break;
+            case "Tournament.Models.PlayersFixture.PlayerTwo":
+                userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.Models.PlayersFixture");
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "PlayerTwo", "Tournament.Models.Player");
+                xamlMember.Getter = get_44_PlayersFixture_PlayerTwo;
+                xamlMember.Setter = set_44_PlayersFixture_PlayerTwo;
+                break;
+            case "Tournament.Models.PlayersFixture.ScoreOne":
+                userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.Models.PlayersFixture");
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "ScoreOne", "Int32");
+                xamlMember.Getter = get_45_PlayersFixture_ScoreOne;
+                xamlMember.Setter = set_45_PlayersFixture_ScoreOne;
+                break;
+            case "Tournament.Models.PlayersFixture.ScoreTwo":
+                userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.Models.PlayersFixture");
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "ScoreTwo", "Int32");
+                xamlMember.Getter = get_46_PlayersFixture_ScoreTwo;
+                xamlMember.Setter = set_46_PlayersFixture_ScoreTwo;
+                break;
+            case "Tournament.Models.PlayersFixture.Round":
+                userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.Models.PlayersFixture");
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "Round", "Int32");
+                xamlMember.Getter = get_47_PlayersFixture_Round;
+                xamlMember.Setter = set_47_PlayersFixture_Round;
+                break;
+            case "Tournament.TournamentViewModel.Fixtures":
+                userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.TournamentViewModel");
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "Fixtures", "System.Collections.ObjectModel.ObservableCollection`1<Tournament.Models.Fixture>");
+                xamlMember.Getter = get_48_TournamentViewModel_Fixtures;
+                xamlMember.Setter = set_48_TournamentViewModel_Fixtures;
+                break;
+            case "Tournament.TournamentViewModel.Players":
+                userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.TournamentViewModel");
+                xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "Players", "System.Collections.ObjectModel.ObservableCollection`1<Tournament.Models.Player>");
+                xamlMember.Getter = get_49_TournamentViewModel_Players;
+                xamlMember.Setter = set_49_TournamentViewModel_Players;
+                break;
             case "Tournament.TournamentViewModel.Name":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_41_TournamentViewModel_Name;
-                xamlMember.Setter = set_41_TournamentViewModel_Name;
+                xamlMember.Getter = get_50_TournamentViewModel_Name;
+                xamlMember.Setter = set_50_TournamentViewModel_Name;
                 break;
             case "Tournament.TournamentViewModel.ImageSource":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "ImageSource", "Windows.UI.Xaml.Media.ImageSource");
-                xamlMember.Getter = get_42_TournamentViewModel_ImageSource;
+                xamlMember.Getter = get_51_TournamentViewModel_ImageSource;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Tournament.TournamentViewModel.Picture":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "Picture", "Byte[]");
-                xamlMember.Setter = set_43_TournamentViewModel_Picture;
+                xamlMember.Setter = set_52_TournamentViewModel_Picture;
                 break;
             case "Tournament.TournamentViewModel.Status":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "Status", "Tournament.Status");
-                xamlMember.Getter = get_44_TournamentViewModel_Status;
-                xamlMember.Setter = set_44_TournamentViewModel_Status;
+                xamlMember.Getter = get_53_TournamentViewModel_Status;
+                xamlMember.Setter = set_53_TournamentViewModel_Status;
                 break;
             case "Tournament.TournamentViewModel.StatusString":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "StatusString", "String");
-                xamlMember.Getter = get_45_TournamentViewModel_StatusString;
-                xamlMember.Setter = set_45_TournamentViewModel_StatusString;
+                xamlMember.Getter = get_54_TournamentViewModel_StatusString;
+                xamlMember.Setter = set_54_TournamentViewModel_StatusString;
                 break;
             case "Tournament.TournamentViewModel.UploadImageCommand":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.TournamentViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "UploadImageCommand", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_46_TournamentViewModel_UploadImageCommand;
+                xamlMember.Getter = get_55_TournamentViewModel_UploadImageCommand;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Tournament.OverviewViewModel.SelectedTournament":
                 userType = (global::Tournament.Tournament_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Tournament.OverviewViewModel");
                 xamlMember = new global::Tournament.Tournament_XamlTypeInfo.XamlMember(this, "SelectedTournament", "Tournament.TournamentViewModel");
-                xamlMember.Getter = get_47_OverviewViewModel_SelectedTournament;
-                xamlMember.Setter = set_47_OverviewViewModel_SelectedTournament;
+                xamlMember.Getter = get_56_OverviewViewModel_SelectedTournament;
+                xamlMember.Setter = set_56_OverviewViewModel_SelectedTournament;
                 break;
             }
             return xamlMember;

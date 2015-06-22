@@ -21,9 +21,9 @@ namespace Tournament
 	class AddPlayerViewModel : ViewModelBase
 	{
 		private string _playerName;
-		private int _tournamentId;
+		private TournamentViewModel _selectedTournament;
 		private ObservableCollection<Player> _players;
-		private string _tournamentName;
+		private int _tournamentId;
 
 		/// <summary>
 		/// AddPlayerViewModel constructor
@@ -35,7 +35,6 @@ namespace Tournament
 			GoBackCommand = new DelegateCommand(AskGoBack, CanGoBack);
 			_players = new ObservableCollection<Player>();
 			_playerName = String.Empty;
-			_tournamentName = String.Empty;
 		}
 
 		#region Data Properties
@@ -49,24 +48,16 @@ namespace Tournament
 		}
 
 		/// <summary>
-		/// Tournament name
+		/// Tournament type of TournamentViewModel
 		/// </summary>
-		public string TournamentName 
+		public TournamentViewModel Tournament
 		{
-			get
-			{
-				return _tournamentName;
-			}
+			get { return this._selectedTournament; }
 			set
 			{
-				if (_tournamentName != value)
-				{
-					_tournamentName = value;
-					OnPropertyChanged();
-				}
+				this.SetProperty(ref this._selectedTournament, value);
 			}
 		}
-
 		/// <summary>
 		/// PlayerName property for new players
 		/// set: only set when modified and run change event
@@ -125,14 +116,14 @@ namespace Tournament
 		private void GenerateSchedule()
 		{
 			// total players must be greater than one to generate a schedule
-			if (Players.Count < 2)
+			if (Tournament.Players.Count < 2)
 			{
 				Message(rl.GetString("GenerateScheduleError"), rl.GetString("GenerateScheduleErrorTitle"));
 				return;
 			}
 
 			// Save player objects in the database
-			Dal.InsertPlayers(Players, _tournamentId);
+			Dal.InsertPlayers(Tournament.Players, _tournamentId);
 			CreateFixtures();
 			NavigationService.Navigate("Matches", _tournamentId);
 			// TODO Generate schedule
@@ -151,8 +142,9 @@ namespace Tournament
 			{
 				return;
 			}
-			Player player = new Player {Name = this.PlayerName.Trim()};
-			_players.Add(player);
+			Player player = new Player { Name = this.PlayerName.Trim() };
+
+			Tournament.Players.Add(player);
 
 			PlayerName = String.Empty;
 			OnPropertyChanged("Players");
@@ -167,7 +159,7 @@ namespace Tournament
 		private void CreateFixtures()
 		{
 			// get the players of the tournament
-			List<Player> players = Players.ToList<Player>();
+			List<Player> players = Tournament.Players.ToList<Player>();
 			// use the full name because of System.Text.RegularExpressions.Match class
 			List<Fixture> fixtures = new List<Fixture>();
 
@@ -190,75 +182,78 @@ namespace Tournament
 				fixtures.Add(new Fixture
 				{
 					MatchId = 1,
-					PlayerOneName = firstTeam.Name,
-					PlayerTwoName = secondTeam.Name,
+					PlayerOne = firstTeam.PlayerId,
+					PlayerTwo = secondTeam.PlayerId,
 					Round = 1
 				});
-				// tournament.AddMatch(new Match(1, 1, firstTeam, secondTeam));
-				return;
 			}
-
-			List<Player> upperTeams = new List<Player>();
-			List<Player> bottomTeams = new List<Player>();
-			// Bereken de lengte van de tijdelijke lists
-			// dit betekent de rest van de list (1e en 2e overslaan), delen door twee
-			// aangezien we de overige teams moeten verdelen over twee lists
-			int listLength = (players.Count - 2) / 2;
-
-			// Op basis van de list lengte kunnen we de teams toevoegen
-			// teams		=	[P1, P2, P3, P4, P5, P6 P7, P8, P9, P10]
-			// upperTeams	=	[P3, P4, P5, P6]
-			upperTeams.AddRange(players.Skip(2).Take(listLength));
-			// bottomTeams	=	[P10, P9, P8, P7]
-			bottomTeams.AddRange(players.Skip(2 + listLength).Take(listLength).Reverse());
-
-			int matchId = 1;
-			// Loop voor elke ronde
-			// Aantal teams - 1 is het aantal ronden (elk team speelt niet tegen zichzelf)
-			for (int round = 1; round < players.Count; round++)
+			else
 			{
-				// Wedstrijden aanmaken
-				fixtures.Add(new Fixture
+				List<Player> upperTeams = new List<Player>();
+				List<Player> bottomTeams = new List<Player>();
+				// Bereken de lengte van de tijdelijke lists
+				// dit betekent de rest van de list (1e en 2e overslaan), delen door twee
+				// aangezien we de overige teams moeten verdelen over twee lists
+				int listLength = (players.Count - 2) / 2;
+
+				// Op basis van de list lengte kunnen we de teams toevoegen
+				// teams		=	[P1, P2, P3, P4, P5, P6 P7, P8, P9, P10]
+				// upperTeams	=	[P3, P4, P5, P6]
+				upperTeams.AddRange(players.Skip(2).Take(listLength));
+				// bottomTeams	=	[P10, P9, P8, P7]
+				bottomTeams.AddRange(players.Skip(2 + listLength).Take(listLength).Reverse());
+
+				int matchId = 1;
+				// Loop voor elke ronde
+				// Aantal teams - 1 is het aantal ronden (elk team speelt niet tegen zichzelf)
+				for (int round = 1; round < players.Count; round++)
 				{
-					MatchId = matchId++,
-					PlayerOneName = firstTeam.Name,
-					PlayerTwoName = secondTeam.Name, 
-					Round = round
-				});
-				// bepaal de overige wedstrijden per ronde
-				// voor elk team in de tijdelijke arrays
-				for (int i = 0; i < listLength; i++)
-				{
-					// upperTeam	=	[P3, P4, enz.
-					// bottomTeam	=	[P10, P9, enz.
-					// De wedstrijd wordt dus (P3 vs p10) (P4 vs P9) enz.
+					// Wedstrijden aanmaken
 					fixtures.Add(new Fixture
 					{
 						MatchId = matchId++,
-						PlayerOneName = upperTeams[i].Name,
-						PlayerTwoName = bottomTeams[i].Name,
+						PlayerOne = firstTeam.PlayerId,
+						PlayerTwo = secondTeam.PlayerId,
 						Round = round
 					});
+					// bepaal de overige wedstrijden per ronde
+					// voor elk team in de tijdelijke arrays
+					for (int i = 0; i < listLength; i++)
+					{
+						// upperTeam	=	[P3, P4, enz.
+						// bottomTeam	=	[P10, P9, enz.
+						// De wedstrijd wordt dus (P3 vs p10) (P4 vs P9) enz.
+						fixtures.Add(new Fixture
+						{
+							MatchId = matchId++,
+							PlayerOne = upperTeams[i].PlayerId,
+							PlayerTwo = bottomTeams[i].PlayerId,
+							Round = round
+						});
+					}
+
+					// Nadat de wedstrijden voor een ronde zijn aangemaakt
+					// moeten we de round-robin toepassen op de tijdelijke lijsten en het tweede team
+
+					// secondTeam gaat naar upperTeam [0]
+					upperTeams.Insert(0, secondTeam);
+					// secondTeam wordt bottomTeam [0]
+					secondTeam = bottomTeams[0];
+					// verwijder het eerste item van bottomTeam (wat nu secondTeam is)
+					bottomTeams.RemoveAt(0);
+					// voeg het laatste item van upperTeam toe achteraan bottomTeam
+					bottomTeams.Add(upperTeams[listLength]);
+					// verwijder de laatste item van upperTeam (welke nu achteraan bottomTeam staat)
+					upperTeams.RemoveAt(listLength);
 				}
-
-				// Nadat de wedstrijden voor een ronde zijn aangemaakt
-				// moeten we de round-robin toepassen op de tijdelijke lijsten en het tweede team
-
-				// secondTeam gaat naar upperTeam [0]
-				upperTeams.Insert(0, secondTeam);
-				// secondTeam wordt bottomTeam [0]
-				secondTeam = bottomTeams[0];
-				// verwijder het eerste item van bottomTeam (wat nu secondTeam is)
-				bottomTeams.RemoveAt(0);
-				// voeg het laatste item van upperTeam toe achteraan bottomTeam
-				bottomTeams.Add(upperTeams[listLength]);
-				// verwijder de laatste item van upperTeam (welke nu achteraan bottomTeam staat)
-				upperTeams.RemoveAt(listLength);
 			}
+
+			
 
 			//TODO Add Matches to Dal
 			Dal.InsertFixtures(fixtures, _tournamentId);
-		} // End CreateMatches
+			// TODO create PlayersFixture object and assign to SelectedTournament 
+		}
 
 		/// <summary>
 		/// OnNavigatedTo runs when this ViewModel is placed in the Frame object
@@ -270,8 +265,8 @@ namespace Tournament
 			if (navigationEvent.Parameter != null)
 			{
 				// get tournament and save its name
-				_tournamentId = (int)navigationEvent.Parameter;
-				TournamentName = Dal.GetTournamentById(_tournamentId).Name;
+				_selectedTournament = navigationEvent.Parameter as TournamentViewModel;
+				_tournamentId = _selectedTournament.Model.TournamentId;
 			}
 			else
 			{

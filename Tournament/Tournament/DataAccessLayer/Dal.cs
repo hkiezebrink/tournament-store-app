@@ -166,9 +166,8 @@
 		/// <param name="players"></param>
 		/// <param name="tournamentId"></param>
 		/// <returns></returns>
-		public static bool InsertPlayers(ObservableCollection<Player> players, int tournamentId)
-		{
-			bool success = false; 
+		public static ObservableCollection<Player> InsertPlayers(ObservableCollection<Player> players, int tournamentId)
+		{ 
 			if (Dal.GetTournamentById(tournamentId) != null)
 			{
 				using (var db = new SQLiteConnection(DbPath))
@@ -178,10 +177,12 @@
 						player.TournamentId = tournamentId;
 						db.Insert(player);	
 					}
-					success = true;
+
+					List<Player> queryResult = (from p in db.Table<Player>() where p.TournamentId == tournamentId select p).ToList();
+					players = new ObservableCollection<Player>(queryResult);
 				}
 			}
-			return success;
+			return players;
 		}
 
 		#endregion
@@ -219,7 +220,7 @@
 		/// <returns></returns>
 		public static ObservableCollection<Fixture> GetFixtures(int tournamentId)
 		{
-			ObservableCollection<Fixture> _fixtures = new ObservableCollection<Fixture>();
+			ObservableCollection<Fixture> _fixtures;
 			using (var db = new SQLiteConnection(DbPath))
 			{
 				List<Fixture> queryResult = (from p in db.Table<Fixture>() where p.TournamentId == tournamentId select p).ToList();

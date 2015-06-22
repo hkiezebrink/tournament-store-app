@@ -294,7 +294,7 @@
 			this.selectedTournament.Model = this.selectedTournament.Model;
 
 			// navigate to AddPlayers page!
-			NavigationService.Navigate("AddPlayers", SelectedTournament.Id);
+			NavigationService.Navigate("AddPlayers", SelectedTournament);
 		}
 
 		public override void OnNavigatedTo(NavigationEventArgs navigationEvent)
